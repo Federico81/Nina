@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NINA Festival 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+<style>
+  body { background: var(--black); color: var(--white); }
+  nav { border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .nav-links a { color: rgba(255,255,255,0.6); }
+  .nav-links a:hover, .nav-links a.active { color: var(--white); text-decoration: underline; text-underline-offset: 4px; }
+
+  .hero {
+    margin-top: 48px; position: relative; min-height: 420px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; padding: 5rem 8vw; max-height: none; height: auto; background: var(--black);
+  }
+  .hero-bg-img {
+    position: absolute; inset: 0;
+    background: url('img/sfondo_blu.png') 60% 60% / auto 100% no-repeat;
+    filter: brightness(0.4) saturate(0.7);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(10,10,10,0.7) 30%, rgba(10,10,10,0.1) 100%);
+  }
+  .hero-content {
+    position: relative; z-index: 2; text-align: center;
+    display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+  }
+  .hero-content h1 { font-family: var(--font-display); font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; color: var(--white); letter-spacing: 0.05em; }
+  .hero-content .italic-sub { font-family: var(--font-body); font-style: italic; font-size: clamp(1rem, 2vw, 1.35rem); color: var(--white); opacity: 0.9; }
+  .hero-content .dates { font-family: var(--font-display); font-size: clamp(1.3rem, 2.8vw, 2rem); font-weight: 700; color: var(--white); margin-top: 0.4rem; }
+  .hero-content .location { font-family: var(--font-display); font-size: clamp(1rem, 2vw, 1.4rem); color: var(--white); opacity: 0.75; }
+
+  .intro-section { padding: 5rem 12vw; max-width: 1000px; margin: 0 auto; }
+  .intro-section p { font-size: clamp(1rem, 1.8vw, 1.25rem); font-weight: 400; line-height: 1.8; color: rgba(255,255,255,0.88); margin-bottom: 1.4rem; }
+  .intro-section p:last-child { margin-bottom: 0; }
+
+  .section-title { font-family: var(--font-display); font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 900; letter-spacing: -0.02em; color: var(--lime); margin-bottom: 3rem; }
+
+  .ospiti-section { padding: 4rem 8vw; border-top: 1px solid rgba(255,255,255,0.1); }
+  .ospiti-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 2rem 1.5rem; }
+  .ospite-card { display: flex; flex-direction: column; gap: 0.6rem; }
+  .ospite-img { width: 100%; aspect-ratio: 3/4; overflow: hidden; background: #1a1a1a; }
+  .ospite-img img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(20%); transition: filter 0.3s, transform 0.4s; }
+  .ospite-card:hover .ospite-img img { filter: grayscale(0%); transform: scale(1.03); }
+  .ospite-name { font-family: var(--font-display); font-size: 0.78rem; font-weight: 700; color: var(--white); line-height: 1.3; }
+  .ospite-role { font-family: var(--font-body); font-size: 0.73rem; color: rgba(255,255,255,0.45); line-height: 1.4; }
+
+  .programma-section { padding: 4rem 8vw; border-top: 1px solid rgba(255,255,255,0.1); }
+  .tab-bar { display: flex; margin-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.15); }
+  .tab-btn { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: rgba(255,255,255,0.35); background: none; border: none; padding: 0.5rem 0; margin-right: 2.5rem; cursor: pointer; position: relative; transition: color 0.2s; }
+  .tab-btn::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px; background: var(--white); transform: scaleX(0); transition: transform 0.2s; }
+  .tab-btn.active { color: var(--white); }
+  .tab-btn.active::after { transform: scaleX(1); }
+  .tab-content { display: none; }
+  .tab-content.active { display: flex; flex-direction: column; gap: 0; }
+
+  .day-columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 3rem; align-items: start; }
+  .day-col { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1.5rem; }
+  .day-col h3 { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: var(--lime); margin-bottom: 1.5rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .event-entry { margin-bottom: 1.8rem; padding-bottom: 1.8rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .event-entry:last-child { border-bottom: none; }
+  .event-time { font-family: var(--font-mono); font-size: 0.65rem; color: var(--lime); letter-spacing: 0.1em; margin-bottom: 0.15rem; }
+  .event-venue { font-family: var(--font-mono); font-size: 0.6rem; color: rgba(255,255,255,0.3); letter-spacing: 0.07em; margin-bottom: 0.4rem; text-transform: uppercase; }
+  .event-tag { display: inline-block; font-family: var(--font-mono); font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.15rem 0.5rem; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.4); margin-bottom: 0.4rem; }
+  .event-tag.talk    { border-color: var(--cyan);   color: var(--cyan); }
+  .event-tag.workshop { border-color: var(--lime);  color: var(--lime); }
+  .event-tag.mostra  { border-color: var(--purple); color: var(--purple); }
+  .event-tag.musica  { border-color: var(--pink);   color: var(--pink); }
+  .event-tag.libro   { border-color: var(--yellow); color: var(--yellow); }
+  .event-title { font-family: var(--font-body); font-size: 0.88rem; font-weight: 500; color: var(--white); line-height: 1.5; margin-bottom: 0.3rem; }
+  .event-desc { font-family: var(--font-body); font-size: 0.78rem; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+  .artisti-section { padding: 4rem 8vw; border-top: 1px solid rgba(255,255,255,0.1); }
+  .artisti-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; }
+  .artista-card { padding: 1.5rem; border: 1px solid rgba(255,255,255,0.1); transition: border-color 0.2s; }
+  .artista-card:hover { border-color: rgba(255,255,255,0.35); }
+  .artista-num { font-family: var(--font-mono); font-size: 0.6rem; color: var(--lime); letter-spacing: 0.1em; margin-bottom: 0.6rem; }
+  .artista-name { font-family: var(--font-display); font-size: 0.82rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem; line-height: 1.3; }
+  .artista-bio { font-family: var(--font-body); font-size: 0.78rem; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+  footer { border-top: 1px solid rgba(255,255,255,0.1); padding: 2.5rem; text-align: center; margin-top: 4rem; background: var(--black); }
+  footer p { font-family: var(--font-mono); font-size: 0.65rem; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; line-height: 2; text-transform: uppercase; }
+
+  @media (max-width: 900px) { .day-columns { grid-template-columns: 1fr; gap: 2rem; } }
+  @media (max-width: 600px) { .ospiti-grid { grid-template-columns: repeat(2, 1fr); } .intro-section { padding: 3rem 6vw; } }
+</style>
+</head>
+<body>
+
+<nav>
+<ul class="nav-links">
+  <li class="logo"><a href="index.html">Nina</a></li>
+  <li class="spacer"></li>
+  <li class="dropdown"><a href="#">Chi siamo</a>
+    <ul class="submenu">
+      <li><a href="#">Manifesto</a></li>
+      <li><a href="#">Miss/vis</a></li>
+      <li><a href="#">Storia</a></li>
+      <li><a href="#">Collaborazioni</a></li>
+      <li><a href="https://www.nina.watch/#links" target="_blank">Archivio Link</a></li>
+      <li><a href="https://www.nina.watch/#audio" target="_blank">Archivio Audio</a></li>
+    </ul>
+   </li>
+   <li class="dropdown">
+     <a href="cosa_facciamo.html">Cosa facciamo</a>
+    <ul class="submenu">
+      <li><a href="festival.html">Festival</a></li>
+      <li><a href="https://www.nina.watch/mostra-incomputabile/">Mostra</a></li>
+      <li><a href="sindacato.html">Sindacato</a></li>
+      <li><a href="rivista.html">Rivista</a></li>
+      <li><a href="incontri.html">Incontri</a></li>
+    </ul>
+    </li> 
+    <li class="dropdown"><a href="#">Partecipa</a>
+    <ul class="submenu">
+      <li><a href="#">Partecipa alle riunioni</a></li>
+      <li><a href="#">Ospita un evento</a></li>
+      <li><a href="#">Volontari per il festival</a></li>
+      <li><a href="#">Call aperte</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Contatti</a></li>
+  </li>
+</ul>
+
+</nav>
+
+  <section class="festival-section">
+    <h2>NINA FESTIVAL 2026</h2>
+    <div class="festival-banner">
+      <div class="festival-banner-bg"></div>
+      <div class="festival-banner-text">
+        <h3>NINA FESTIVAL</h3>
+        <p class="subtitle">Arrivano le intelligenze collettive</p>
+        <p class="dates">8 · 9 · 10 Maggio 2026</p>
+        <p class="location">Milano e Roma</p>
+      </div>
+    </div>
+  </section>
+
+
+<section class="intro-section" style="text-align: justify;">
+  <p>Il festival è dedicato a tecniche, smanettone, artiste, teoriche, curiose e scettiche che hanno progetti, artefatti o contenuti da condividere con noi e con chi ci sarà. Il tema che abbiamo identificato è la relazione tra l'incomputabile — tutto ciò che non può e non "merita" di essere calcolato, o non dovrebbe esserlo — e l'AI generativa, gli LLM e in generale la governance algoritmica della vita.</p>
+  <p>Se è vero da un lato che l'intelligenza artificiale si mostra con un divenire umano della macchina è vero anche il contrario: assistiamo a un divenire macchinico della specie.</p>
+</section>
+
+<section class="ospiti-section">
+  <h2 class="section-title">Ospiti</h2>
+  <div class="ospiti-grid">
+    <div class="ospite-card"><div class="ospite-img"><img src="https://picsum.photos/300/400?random=1" alt="Vladan Joler"></div><p class="ospite-name">Vladan Joler</p><p class="ospite-role">Artista visivo, professore di nuovi media – Università di Novi Sad</p></div>
+    <div class="ospite-card"><div class="ospite-img"><img src="https://picsum.photos/300/400?random=2" alt="Marco Mancuso"></div><p class="ospite-name">Marco Mancuso</p><p class="ospite-role">Docente Università di Bologna e Politecnico delle Arti di Bergamo</p></div>
+    <div class="ospite-card"><div class="ospite-img"><img src="https://picsum.photos/300/400?random=3" alt="Domenico Quaranta"></div><p class="ospite-name">Domenico Quaranta</p><p class="ospite-role">Critico d'arte, curatore, docente alla Cattolica</p></div>
+    <div class="ospite-card"><div class="ospite-img"><img src="https://picsum.photos/300/400?random=4" alt="Nick Couldry"></div><p class="ospite-name">Nick Couldry</p><p class="ospite-role">Professore emerito – London School of Economics</p></div>
+    <div class="ospite-card"><div class="ospite-img"><img src="https://picsum.photos/300/400?random=5" alt="Stefania Maurizi"></div><p class="ospite-name">Stefania Maurizi</p><p class="ospite-role">Giornalista investigativa – Il Fatto Quotidiano</p></div>
+    <div class="ospite-card"><div class="ospite-img"><img src="https://picsum.photos/300/400?random=6" alt="Paolo Benanti"></div><p class="ospite-name">Paolo Benanti</p><p class="ospite-role">Professore di etica della tecnologia – Università Gregoriana, consigliere ONU</p></div>
+    <div class="ospite-card"><div class="ospite-img"><img src="https://picsum.photos/300/400?random=7" alt="Matteo Flora"></div><p class="ospite-name">Matteo Flora</p><p class="ospite-role">Docente universitario, fondatore The Fool</p></div>
+    <div class="ospite-card"><div class="ospite-img"><img src="https://picsum.photos/300/400?random=8" alt="Irene Doda"></div><p class="ospite-name">Irene Doda</p><p class="ospite-role">Giornalista freelance, scrittrice e attivista</p></div>
+    <div class="ospite-card"><div class="ospite-img"><img src="https://picsum.photos/300/400?random=9" alt="Collettivo Ippolita"></div><p class="ospite-name">Collettivo Ippolita</p><p class="ospite-role">Gruppo di ricerca indipendente</p></div>
+    <div class="ospite-card"><div class="ospite-img"><img src="https://picsum.photos/300/400?random=10" alt="Michelle Tylicki"></div><p class="ospite-name">Michelle Tylicki</p><p class="ospite-role">Artista, tra Londra e Lisbona</p></div>
+    <div class="ospite-card"><div class="ospite-img"><img src="https://picsum.photos/300/400?random=11" alt="AIxDesign"></div><p class="ospite-name">AIxDesign</p><p class="ospite-role">Community no-profit per un AI al servizio del bene comune</p></div>
+    <div class="ospite-card"><div class="ospite-img"><img src="https://picsum.photos/300/400?random=12" alt="Period Think Tank"></div><p class="ospite-name">Period Think Tank</p><p class="ospite-role">Collettivo bolognese: femminismo nei dati e dati nel femminismo</p></div>
+  </div>
+</section>
+
+<section class="programma-section">
+  <h2 class="section-title">Programma</h2>
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('milano', this)">Milano</button>
+    <button class="tab-btn" onclick="switchTab('roma', this)">Roma</button>
+  </div>
+
+  <div class="tab-content active" id="tab-milano">
+    <div class="day-columns">
+      <div class="day-col">
+        <h3>Venerdì 8 Maggio</h3>
+        <div class="event-entry"><div class="event-time">ore 19</div><div class="event-venue">Nuovo Armenia</div><span class="event-tag libro">Presentazione</span><p class="event-title">Presentazione di "Reverse Contradictionary"</p><p class="event-desc">Un dizionario dei nuovi mondi. Con l'autore Vladan Joler.</p></div>
+        <div class="event-entry"><div class="event-time">ore 20</div><div class="event-venue">Nuovo Armenia</div><span class="event-tag talk">Talk</span><p class="event-title">Intelligenza artificiale, arte e incomputabilità</p><p class="event-desc">Con Marco Mancuso, Domenico Quaranta, AIxDesign. Modera Beatrice Gobbo.</p></div>
+        <div class="event-entry"><div class="event-time">ore 21</div><div class="event-venue">Nuovo Armenia</div><span class="event-tag mostra">Mostra</span><p class="event-title">Inaugurazione della mostra dell'incomputabile</p><p class="event-desc">Con Vladan Joler. Video corner con Sabina Leonelli, Dasha Ilina, Hiba Ali. Foto corner con Michelle Tylicki. VR performance <em>Counter mapping digital reality</em> di Hiba Ali.</p></div>
+        <div class="event-entry"><div class="event-time">ore 22</div><div class="event-venue">Nuovo Armenia</div><span class="event-tag musica">Musica</span><p class="event-title">dj DerghAIn + Hiba Ali</p></div>
+      </div>
+      <div class="day-col">
+        <h3>Sabato 9 Maggio</h3>
+        <div class="event-entry"><div class="event-time">ore 11</div><div class="event-venue">Museo Nazionale Scienza e Tecnologia Leonardo da Vinci</div><span class="event-tag talk">Talk</span><p class="event-title">Colonialismo dei dati e impatto delle big tech</p><p class="event-desc">Giovanna Mascheroni intervista Nick Couldry. Introduce Simona Casonato.</p></div>
+        <div class="event-entry"><div class="event-time">ore 14</div><div class="event-venue">Biblioteca di Dergano</div><span class="event-tag libro">Presentazione</span><p class="event-title">Presentazione del libro "Nutrire la macchina"</p><p class="event-desc">Con collettivo Ippolita, intervistati da Riccardo Pronzato.</p></div>
+        <div class="event-entry"><div class="event-time">ore 16</div><div class="event-venue">Rob de matt</div><span class="event-tag workshop">Workshop</span><p class="event-title">Fashion-tech, oggetti stampati 3D & protezione dati biometrici</p><p class="event-desc">Con Socs, CapableDesign & Michelle Tylicki.</p></div>
+        <div class="event-entry"><div class="event-time">ore 18</div><div class="event-venue">Rob de matt</div><span class="event-tag workshop">Workshop + Talk</span><p class="event-title">Really but really human resources</p><p class="event-desc">Come combattere le discriminazioni nei sistemi di assunzione automatici? + Presentazione del sindacato universale digitale. Con Vecna.</p></div>
+        <div class="event-entry"><div class="event-time">ore 20</div><div class="event-venue">Rob de matt</div><span class="event-tag musica">Musica</span><p class="event-title">dj Petroits</p></div>
+      </div>
+      <div class="day-col">
+        <h3>Domenica 10 Maggio</h3>
+        <div class="event-entry"><div class="event-time">ore 11</div><div class="event-venue">Rob de matt</div><span class="event-tag workshop">Workshop</span><p class="event-title">Quanti soldi ci deve Facebook</p><p class="event-desc">Tecniche di prompting e vibe coding per sviluppare web app. Con Federico De Ambrosis.</p></div>
+        <div class="event-entry"><div class="event-time">ore 14</div><div class="event-venue">Scomodo</div><span class="event-tag workshop">Workshop</span><p class="event-title">Il caso Glovo</p><p class="event-desc">Come abbiamo fatto a farli condannare. Con reversing.works e Akme.</p></div>
+        <div class="event-entry"><div class="event-time">ore 15</div><div class="event-venue">Scomodo</div><span class="event-tag workshop">Workshop</span><p class="event-title">Narrative on AI</p><p class="event-desc">Come è stata narrata l'intelligenza artificiale all'arrivo dei modelli generativi. Con Laura Carrer.</p></div>
+        <div class="event-entry"><div class="event-time">ore 16</div><div class="event-venue">Scomodo</div><span class="event-tag talk">Talk</span><p class="event-title">Il gemello digitale</p><p class="event-desc">Con Period think tank, Maria Enrica Virgillito, Jacopo Staccioli e Anita Pirovano.</p></div>
+        <div class="event-entry"><div class="event-time">ore 18</div><div class="event-venue">Scomodo</div><span class="event-tag libro">Presentazione</span><p class="event-title">Rivista "Intelligenza autonoma" — n.0</p><p class="event-desc">Con Pino Tripodi e Giuseppe Genna.</p></div>
+        <div class="event-entry"><div class="event-time">ore 20</div><div class="event-venue">Scomodo</div><span class="event-tag musica">Musica</span><p class="event-title">Steward.exe — "HUMANWARE CUTS"</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab-roma">
+    <div class="day-columns">
+      <div class="day-col">
+        <h3>Venerdì 8 Maggio</h3>
+        <div class="event-entry"><div class="event-time">ore 19</div><div class="event-venue">Casetta rossa</div><span class="event-tag mostra">Mostra</span><p class="event-title">Inaugurazione la mostra dell'incomputabile</p><p class="event-desc">Con Daniela Cotimbo. Video corner con Sabina Leonelli, Dasha Ilina, Hiba Ali. Foto corner con Michelle Tylicki.</p></div>
+        <div class="event-entry"><div class="event-time">ore 21</div><div class="event-venue">Casetta rossa</div><span class="event-tag talk">Talk</span><p class="event-title">Né intelligente né neutrale: l'AI nel giornalismo</p><p class="event-desc">Con Stefania Maurizi, Paolo Benanti, Matteo Flora. Modera Anna Masera.</p></div>
+      </div>
+      <div class="day-col">
+        <h3>Sabato 9 Maggio</h3>
+        <div class="event-entry"><div class="event-time">ore 11</div><div class="event-venue">Millepiani</div><span class="event-tag workshop">Workshop</span><p class="event-title">Sportellino</p><p class="event-desc">Chatbot gratuito per stranieri in Italia. Permessi, sanità, anagrafe e servizi sociali in più lingue.</p></div>
+        <div class="event-entry"><div class="event-time">ore 14</div><div class="event-venue">Millepiani</div><span class="event-tag workshop">Workshop</span><p class="event-title">Bonfire — framework open source per il Fediverso</p><p class="event-desc">Con Reclaim the tech.</p></div>
+        <div class="event-entry"><div class="event-time">ore 16</div><div class="event-venue">Millepiani</div><span class="event-tag libro">Presentazione</span><p class="event-title">Presentazione di "Reverse Contradictionary"</p><p class="event-desc">Con Vladan Joler e Arianna Forte.</p></div>
+        <div class="event-entry"><div class="event-time">ore 17</div><div class="event-venue">Millepiani</div><span class="event-tag libro">Presentazione</span><p class="event-title">"Onnipotenti"</p><p class="event-desc">I tecnofascisti e il nostro futuro. Con l'autrice Irene Doda.</p></div>
+        <div class="event-entry"><div class="event-time">ore 18</div><div class="event-venue">Millepiani</div><span class="event-tag libro">Presentazione</span><p class="event-title">Rivista "Intelligenza autonoma" — n.0</p><p class="event-desc">Con Pino Tripodi e Giuseppe Genna, dialogano con Reclaim the tech e Teresa Numerico.</p></div>
+      </div>
+      <div class="day-col">
+        <h3>Domenica 10 Maggio</h3>
+        <div class="event-entry"><div class="event-time">ore 11</div><div class="event-venue">Millepiani</div><span class="event-tag workshop">Workshop</span><p class="event-title">Lo Stregatto</p><p class="event-desc">Progetto open source per creare servizi AI collegando LLM. Con Piero Savastano.</p></div>
+        <div class="event-entry"><div class="event-time">ore 12</div><div class="event-venue">Millepiani</div><span class="event-tag workshop">Workshop</span><p class="event-title">Bonifacio VIII</p><p class="event-desc">Che senso ha addestrare il più cattivo dei chatbot? Con Vecna.</p></div>
+        <div class="event-entry"><div class="event-time">ore 14</div><div class="event-venue">Millepiani</div><span class="event-tag talk">Talk</span><p class="event-title">Il gemello digitale</p><p class="event-desc">Con Period think tank, Amedeo Ciaccheri, Michela Cicculli e Francesca Lagioia.</p></div>
+        <div class="event-entry"><div class="event-time">ore 16</div><div class="event-venue">Casetta rossa</div><span class="event-tag workshop">Workshop</span><p class="event-title">Fashion-tech & protezione dati biometrici</p><p class="event-desc">Con Socs & Michelle Tylicki.</p></div>
+        <div class="event-entry"><div class="event-time">ore 18</div><div class="event-venue">Casetta rossa</div><span class="event-tag workshop">Workshop + Talk</span><p class="event-title">Really but really human resources</p><p class="event-desc">+ Presentazione del sindacato universale digitale. Con Vecna.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="artisti-section">
+  <h2 class="section-title">Espongono le loro opere</h2>
+  <div class="artisti-grid">
+    <div class="artista-card"><p class="artista-num">01</p><p class="artista-name">Sabina Leonelli</p><p class="artista-bio">Filosofa della scienza, professoressa alla Technische Universität München.</p></div>
+    <div class="artista-card"><p class="artista-num">02</p><p class="artista-name">Dasha Ilina</p><p class="artista-bio">Artista russa residente a Parigi.</p></div>
+    <div class="artista-card"><p class="artista-num">03</p><p class="artista-name">Hiba Ali</p><p class="artista-bio">Artista dei nuovi media, educatrice, DJ e produttrice di musica sperimentale. Tra Chicago, Austin e Toronto.</p></div>
+    <div class="artista-card"><p class="artista-num">04</p><p class="artista-name">Michelle Tylicki</p><p class="artista-bio">Artista newyorchese, opera principalmente tra Londra e Lisbona.</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>N.I.N.A APS<br>C.F. 98021140151<br>Via Belgirate, 15 Milano<br>Copyright 2026</p>
+</footer>
+
+<script>
+  function switchTab(city, btn) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + city).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>

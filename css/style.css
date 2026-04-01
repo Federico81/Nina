@@ -1,0 +1,549 @@
+/* ─────────────────────────────────────────
+   NINA – Global Styles
+   style.css
+───────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black: #0a0a0a;
+  --white: #f5f0e8;
+  --lime: #c8f500;
+  --pink: #ff2d6b;
+  --yellow: #ffe600;
+  --purple: #b48cff;
+  --cyan: #00e5ff;
+  --navy: #0d0d1a;
+  --font-display: 'Unbounded', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--black);
+  padding: 0 2rem;
+  height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.15em;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  flex: 1;
+}
+
+/* Spinge tutto il resto del menu a destra */
+.nav-links .spacer {
+  margin-left: auto;
+}
+
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--lime); }
+.nav-links a.active {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Nasconde il submenu */
+.nav-links .submenu {
+  display: none;
+  position: absolute;
+  background: white;
+  padding: 10px 0;
+  list-style: none;
+  margin: 0;
+  border: 1px solid #ddd;
+}
+
+/* Mostra il submenu al passaggio del mouse */
+.nav-links .dropdown:hover .submenu {
+  display: block;
+}
+
+/* Stile delle voci del submenu */
+.nav-links .submenu li {
+  padding: 5px 20px;
+  white-space: nowrap;
+}
+
+.nav-links .submenu li a {
+  color: black;
+  text-decoration: none;
+}
+
+.nav-links .submenu li a:hover {
+  text-decoration: underline;
+}
+
+/* Per assicurare che il dropdown si posizioni correttamente */
+.nav-links .dropdown {
+  position: relative;
+}
+
+
+/* ─── HERO ─── */
+.hero {
+  margin-top: 48px;
+  height: calc(100vh - 48px);
+  max-height: 600px;
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bg { display: none; }
+
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  background: url('../img/Hero_Image.png') center/cover no-repeat;
+  opacity: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-logo-img {
+  width: clamp(180px, 30vw, 380px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 4px 24px rgba(0,0,0,0.5));
+}
+
+.hero-tagline-img {
+  width: clamp(200px, 38vw, 480px);
+  height: auto;
+  display: block;
+  opacity: 0.95;
+}
+
+/* ─── VISION / MISSION ─── */
+.text-section {
+  padding: 5rem 8vw;
+  max-width: 900px;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-bottom: 1.5px solid var(--black);
+  display: inline-block;
+  padding-bottom: 2px;
+  margin-bottom: 1.2rem;
+}
+
+.text-section p {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: #1a1a1a;
+}
+
+.text-section + .text-section {
+  padding-top: 0;
+  margin-top: -2rem;
+}
+
+/* ─── SLIDER ─── */
+.slider-section {
+  position: relative;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide {
+  min-width: 100%;
+  height: 420px;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: background 0.3s;
+  border: none;
+}
+
+.dot.active { background: white; }
+
+/* ─── TWO-COL SECTIONS ─── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: center;
+  margin: 0;
+}
+
+.two-col-text {
+  padding: 4rem 6vw;
+}
+
+.two-col-text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.two-col-text p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #333;
+}
+
+.two-col-text ul {
+  margin: 1rem 0 1.5rem 1.2rem;
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 2;
+}
+
+.two-col-image {
+  height: 360px;
+  overflow: hidden;
+}
+
+.two-col-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.two-col.reverse .two-col-text { order: 2; }
+.two-col.reverse .two-col-image { order: 1; }
+
+/* ─── CTA BUTTON ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.2rem;
+  border: 1.5px solid var(--black);
+  background: transparent;
+  color: var(--black);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-top: 1.5rem;
+}
+
+.btn:hover { background: var(--black); color: var(--white); }
+
+.btn .btn-icon { font-size: 0.9rem; }
+
+/* ─── FESTIVAL BANNER ─── */
+.festival-section {
+  padding: 4rem 8vw 2rem;
+}
+
+.festival-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.festival-banner {
+  position: relative;
+  overflow: hidden;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.festival-banner-bg {
+  position: absolute;
+  inset: 0;
+  background: url('../img/sfondo_blu.png') left 50% / cover no-repeat;
+  filter: brightness(0.45) saturate(0.8);
+  background-size: 140%;
+
+}
+
+.festival-banner-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.festival-banner-text h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.festival-banner-text .subtitle {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  color: var(--white);
+  opacity: 0.9;
+  margin-bottom: 0.4rem;
+}
+
+.festival-banner-text .dates {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-top: 0.3rem;
+}
+
+.festival-banner-text .location {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  color: var(--white);
+  opacity: 0.85;
+  margin-top: 0.2rem;
+}
+
+/* ─── PROGETTI IN CORSO ─── */
+.projects-section {
+  padding: 4rem 8vw;
+}
+
+.projects-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 2rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.project-card {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+  position: relative;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card:hover { opacity: 0.85; }
+
+.project-card:nth-child(1) { background: var(--purple); }
+.project-card:nth-child(2) { background: var(--lime); }
+.project-card:nth-child(3) { background: var(--pink); color: white; }
+
+.project-card h3 {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.project-card p { font-size: 0.75rem; opacity: 0.8; }
+
+.project-arrow {
+  font-size: 1.2rem;
+  align-self: flex-end;
+  margin-top: 1rem;
+}
+
+/* ─── CONTATTI ─── */
+.contact-section {
+  padding: 4rem 8vw;
+  border-top: 1px solid #ddd;
+}
+
+.contact-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 700px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: 0.8rem 1rem;
+  border: 1.5px solid #ccc;
+  background: transparent;
+  color: var(--black);
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus { border-color: var(--black); }
+
+.contact-form textarea { grid-column: 1 / -1; height: 120px; }
+
+.contact-form .btn { grid-column: 1 / -1; width: fit-content; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--white);
+  border-top: 1px solid #ddd;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+footer p {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: #888;
+  letter-spacing: 0.1em;
+  line-height: 2;
+  text-transform: uppercase;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .two-col { grid-template-columns: 1fr; }
+  .two-col.reverse .two-col-text { order: 1; }
+  .two-col.reverse .two-col-image { order: 2; }
+  .two-col-image { height: 260px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .contact-form { grid-template-columns: 1fr; }
+  .festival-banner { padding: 2rem; }
+  .nav-links { gap: 1.2rem; }
+  .text-section { padding: 3rem 6vw; }
+}
+
+/* ─── FIX PER MARGIN-TOP DELLE SEZIONI SOTTO IL NAV ─── */
+.page-offset {
+  margin-top: 48px;
+}
+
+/* ─── FIX PER IMMAGINI CON MAX-WIDTH INLINE ─── */
+.img-max {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ─── FIX PER SEZIONI CON PADDING INLINE ─── */
+.section-padding {
+  padding: 4rem 8vw;
+}
+
+/* ─── FIX PER CONTENITORI CENTRATI ─── */
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* ─── FIX PER TITOLI CHE AVEVANO STILI INLINE ─── */
+.title-large {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+/* ─── FIX PER TESTI CON WIDTH LIMITATA ─── */
+.text-narrow {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+

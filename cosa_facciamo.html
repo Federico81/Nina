@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NINA – Progetti / Azioni</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+
+    body { background: var(--white); color: var(--black); }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      margin-top: 48px;
+      padding: 4rem 8vw 3rem;
+    }
+
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 2rem;
+    }
+
+    .page-intro {
+      max-width: 720px;
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      font-weight: 300;
+      line-height: 1.75;
+      color: #222;
+    }
+
+    /* ── GRID LAYOUT ── */
+    .azioni-grid {
+      padding: 0 8vw 6rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: auto auto auto;
+      gap: 0;
+    }
+
+    /* Row headers */
+    .row-header {
+      padding: 2rem 0 1rem;
+      grid-column: span 1;
+    }
+
+    .row-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    /* ── BANNER BASE ── */
+    .banner {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 0.25s;
+    }
+
+    .banner:hover { opacity: 0.88; }
+
+    .banner:hover .banner-arrow { transform: translateX(4px); }
+
+    .banner-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .banner-label {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2.5vw, 2rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      display: block;
+    }
+
+    .banner-sub {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 0.4rem;
+      display: block;
+      opacity: 0.75;
+    }
+
+    .banner-arrow {
+      display: inline-block;
+      margin-top: 1.2rem;
+      font-size: 1.2rem;
+      transition: transform 0.2s;
+    }
+
+    /* image bg banners */
+    .banner-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.5s;
+    }
+
+    .banner:hover .banner-bg { transform: scale(1.03); }
+
+    .banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+
+    /* ── ROW 1: Rivista + Sindacato ── */
+    .row1-headers {
+      display: contents;
+    }
+
+    .header-rivista {
+      padding: 2rem 2rem 1rem 0;
+    }
+
+    .header-sindacato {
+      padding: 2rem 0 1rem 2rem;
+    }
+
+    .header-rivista h2,
+    .header-sindacato h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .banner-rivista {
+      aspect-ratio: 1/1.15;
+      background: var(--pink);
+    }
+
+    .banner-rivista .banner-label { color: var(--yellow); }
+
+    .banner-sindacato {
+      aspect-ratio: unset;
+      min-height: 320px;
+      background: var(--purple);
+      margin-left: 1rem;
+    }
+
+    .banner-sindacato .banner-label { color: var(--white); }
+    .banner-sindacato .banner-sub { color: rgba(255,255,255,0.7); }
+
+    /* ── ROW 2: Mostra header ── */
+    .header-mostra {
+      grid-column: 1 / -1;
+      padding: 3rem 0 1rem;
+    }
+
+    .header-mostra h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    /* ── ROW 2: Mostra + Festival sidebar ── */
+    .row2-banners {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1rem;
+      min-height: 380px;
+    }
+
+    .banner-mostra {
+      background: #d4f54d;
+    }
+
+    .banner-mostra .banner-label { color: var(--pink); }
+    .banner-mostra .banner-sub { color: rgba(255,20,80,0.6); }
+
+    .banner-festival {
+      background: var(--black);
+    }
+
+    .banner-festival .banner-label { color: var(--white); }
+    .banner-festival .banner-inner { padding: 2.5rem 2rem; text-align: center; }
+
+    .festival-quote {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .btn-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.6rem 1.1rem;
+      border: 1.5px solid var(--white);
+      background: transparent;
+      color: var(--white);
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-dark:hover { background: var(--white); color: var(--black); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid #ddd;
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    footer p {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.1em;
+      line-height: 2;
+      text-transform: uppercase;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .azioni-grid { grid-template-columns: 1fr; }
+      .banner-sindacato { margin-left: 0; margin-top: 1rem; min-height: 240px; }
+      .row2-banners { grid-template-columns: 1fr; }
+      .banner-rivista { aspect-ratio: 4/3; }
+      .header-rivista { padding: 2rem 0 1rem; }
+      .header-sindacato { padding: 0; margin-top: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+<nav>
+<ul class="nav-links">
+  <li class="logo"><a href="index.html">Nina</a></li>
+  <li class="spacer"></li>
+  <li class="dropdown"><a href="#">Chi siamo</a>
+    <ul class="submenu">
+      <li><a href="#">Manifesto</a></li>
+      <li><a href="#">Miss/vis</a></li>
+      <li><a href="#">Storia</a></li>
+      <li><a href="#">Collaborazioni</a></li>
+      <li><a href="https://www.nina.watch/#links" target="_blank">Archivio Link</a></li>
+      <li><a href="https://www.nina.watch/#audio" target="_blank">Archivio Audio</a></li>
+    </ul>
+   </li>
+   <li class="dropdown">
+     <a href="cosa_facciamo.html">Cosa facciamo</a>
+    <ul class="submenu">
+      <li><a href="festival.html">Festival</a></li>
+      <li><a href="https://www.nina.watch/mostra-incomputabile/">Mostra</a></li>
+      <li><a href="sindacato.html">Sindacato</a></li>
+      <li><a href="rivista.html">Rivista</a></li>
+      <li><a href="incontri.html">Incontri</a></li>
+    </ul>
+    </li> 
+    <li class="dropdown"><a href="#">Partecipa</a>
+    <ul class="submenu">
+      <li><a href="#">Partecipa alle riunioni</a></li>
+      <li><a href="#">Ospita un evento</a></li>
+      <li><a href="#">Volontari per il festival</a></li>
+      <li><a href="#">Call aperte</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Contatti</a></li>
+  </li>
+</ul>
+
+</nav>
+
+  <!-- HEADER -->
+  <header class="page-header">
+    <h1>Progetti / Azioni</h1>
+    <p class="page-intro">Le azioni di NINA si articolano in quattro direzioni: una rivista, un sindacato digitale, una mostra e il festival. Ogni progetto è uno strumento per costruire intelligenza collettiva e prendere posizione sulla tecnologia.</p>
+  </header>
+
+  <!-- GRID -->
+  <div class="azioni-grid">
+
+    <!-- Row 1 headers -->
+    <div class="header-rivista"><h2>Rivista</h2></div>
+    <div class="header-sindacato"><h2>Sindacato</h2></div>
+
+    <!-- Rivista banner -->
+    <a href="rivista.html" class="banner banner-rivista">
+      <div class="banner-inner">
+        <span class="banner-label">Intelligenza autonoma</span>
+        <span class="banner-sub">Numero 0 "Nuove macchine celibi" </span>
+        <span class="banner-arrow" style="color: var(--yellow);">→</span>
+      </div>
+    </a>
+
+    <!-- Sindacato banner -->
+    <a href="sindacato.html" class="banner banner-sindacato">
+      <div class="banner-inner">
+        <span class="banner-label">Sindacato Universale</span>
+        <span class="banner-sub">Sindacato universale digitale / Gilda cosmica / </span>
+        <span class="banner-sub"> Internet workers of the world / Eva (Earth vindicate algorithm) /</span>
+<span class="banner-sub">Unione Esposti all'Algoritmo</span>
+        <span class="banner-arrow" style="color: white;">→</span>
+      </div>
+    </a>
+
+    <!-- Row 2 header -->
+    <div class="header-mostra"><h2>Mostra dell'Incomputabile</h2></div>
+
+    <!-- Row 2: Mostra + Festival -->
+    <div class="row2-banners">
+
+      <!-- Mostra -->
+      <a href="https://www.nina.watch/festival/mostra_incomputabile.html" class="banner banner-mostra">
+        <div class="banner-inner">
+          <span class="banner-label">Mostra</span>
+          <span class="banner-sub">Se il potere passa dal calcolo,<br>cosa significa essere incomputabili?</span>
+          <span class="banner-arrow" style="color: var(--pink);">→</span>
+        </div>
+      </a>
+
+      <!-- Festival -->
+      <a href="festival.html" class="banner banner-festival">
+        <div class="banner-bg" style="background-image: url('img/sfondo_blu.png'); filter: brightness(0.3) saturate(0.6);"></div>
+        <div class="banner-inner">
+          <span class="festival-quote">Il Festival di NINA sarà il momento collettivo in cui metteremo in pratica queste azioni e racconteremo il nostro percorso.</span>
+          <span class="btn-dark">□ Leggi di più □</span>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>N.I.N.A APS<br>C.F. 98021140151<br>Via Belgirate, 15 Milano<br>Copyright 2026</p>
+  </footer>
+
+</body>
+</html>
