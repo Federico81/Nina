@@ -13,6 +13,11 @@
 
   <!-- NAV -->
    <nav>
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 <ul class="nav-links">
   <li class="logo"><a href="index.html">Nina</a></li>
   <li class="spacer"></li>
@@ -182,5 +187,20 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+document.querySelector(".hamburger").addEventListener("click", () => {
+  document.querySelector(".nav-links").classList.toggle("open");
+});
+
+// Apri i dropdown su mobile con il tocco
+document.querySelectorAll(".dropdown > a").forEach(link => {
+  link.addEventListener("click", (e) => {
+    if (window.innerWidth <= 1024) {
+      e.preventDefault();
+      link.parentElement.classList.toggle("open");
+    }
+  });
+});
+</script>
 </body>
 </html>
