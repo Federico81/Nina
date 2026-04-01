@@ -58,6 +58,72 @@ nav {
   flex: 1;
 }
 
+/* --- HAMBURGER BUTTON --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: 0.3s;
+}
+
+/* --- MOBILE MENU HIDDEN --- */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    flex-direction: column;
+    background: white;
+    width: 250px;
+    padding: 20px;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .dropdown .submenu {
+    display: none;
+    flex-direction: column;
+    padding-left: 15px;
+  }
+
+  .dropdown.open > .submenu {
+    display: flex;
+  }
+}
+
+/* --- DESKTOP DROPDOWN --- */
+@media (min-width: 1025px) {
+  .dropdown:hover .submenu {
+    display: block;
+  }
+
+  .submenu {
+    display: none;
+    position: absolute;
+    background: white;
+    padding: 10px;
+    list-style: none;
+    border: 1px solid #ddd;
+  }
+}
+
 /* Spinge tutto il resto del menu a destra */
 .nav-links .spacer {
   margin-left: auto;
@@ -547,3 +613,19 @@ footer p {
   margin-right: auto;
 }
 
+/* Media queries menu */
+@media (max-width: 1024px) {
+  .nav-links .logo {display: none;}
+  .nav-links a {color: #000!important}
+  .submenu {
+    position: relative;
+    z-index: 9999;
+    background: #fff; /* importante per leggibilità */
+    padding: 10px 0;
+  }
+
+  .submenu li a {
+    display: block;
+    padding: 8px 0;
+  }
+}
