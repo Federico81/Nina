@@ -615,7 +615,7 @@ footer p {
 
 /* Media queries menu */
 @media (max-width: 1024px) {
-  .nav-links .logo {display: none;}
+  /*.nav-links .logo {display: none;}*/
   .nav-links a {color: #000!important}
   .submenu {
     position: relative;
