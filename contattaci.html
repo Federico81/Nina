@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NINA – Ne Intelligente Ne Artificiale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+  .container2 {
+    display: block;
+  }
+
+  section {
+    padding: 20px;
+    background: #eee;
+    margin-bottom: 20px;
+  }
+.container2 .contact-section {
+  padding: 20px !important;
+  background: #eee !important;
+  max-width: none !important;
+  width: 100% !important;
+}
+
+  .contact-form form input,
+.contact-form form select,
+.contact-form form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  background: #fff;
+  margin-bottom: 15px;
+  appearance: none; /* uniforma la select */
+}
+
+.contact-form form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+.contact-form form button.btn {
+  padding: 14px 20px;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .contact-form form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-form form textarea,
+  .contact-form form button {
+    grid-column: span 2;
+  }
+}
+
+  @media (min-width: 768px) {
+  .container2 {
+    display: flex;
+    gap: 20px; 
+  }
+
+  /* Applica flex solo ai section generici */
+  .container2 > section {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  /* Ma il form deve essere più largo */
+  .container2 > .contact-section {
+    flex: 2; /* aumenta a 3 se vuoi ancora più spazio */
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+   <nav>
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+<ul class="nav-links">
+  <li class="logo"><a href="index.html">Nina</a></li>
+  <li class="spacer"></li>
+  <li class="dropdown"><a href="#">Chi siamo</a>
+    <ul class="submenu">
+      <li><a href="#">Manifesto</a></li>
+      <li><a href="#">Miss/vis</a></li>
+      <li><a href="#">Storia</a></li>
+      <li><a href="#">Collaborazioni</a></li>
+      <li><a href="https://www.nina.watch/#links" target="_blank">Archivio Link</a></li>
+      <li><a href="https://www.nina.watch/#audio" target="_blank">Archivio Audio</a></li>
+    </ul>
+   </li>
+   <li class="dropdown">
+     <a href="cosa_facciamo.html">Cosa facciamo</a>
+    <ul class="submenu">
+      <li><a href="festival.html">Festival</a></li>
+      <li><a href="https://www.nina.watch/mostra-incomputabile/">Mostra</a></li>
+      <li><a href="sindacato.html">Sindacato</a></li>
+      <li><a href="rivista.html">Rivista</a></li>
+      <li><a href="incontri.html">Incontri</a></li>
+    </ul>
+    </li> 
+    <li class="dropdown"><a href="partecipa.html">Partecipa</a>
+      <!--
+    <ul class="submenu">
+      <li><a href="#">Partecipa alle riunioni</a></li>
+      <li><a href="#">Ospita un evento</a></li>
+      <li><a href="#">Volontari per il festival</a></li>
+      <li><a href="#">Call aperte</a></li>
+    </ul>
+    -->
+  </li>
+  <li><a href="contattaci.html">Contatti</a></li>
+</ul>
+
+</nav>
+
+<div class="container2">
+  <section>
+    <p style="margin-top:50px">Hai qualcosa da dirci?<br><br>
+    Qualche iniziativa da proporci?<br><br>
+    Vuoi semplicemente resatare informato sulle nostre attività? (Abbiamo una newslettere a cadenza molto casuale!)<br><br>
+    Compila il form a fianco e ti risponderemo al più presto!
+    </p>
+  </section>
+  <!-- CONTATTI -->
+  <section class="contact-section" style="margin-top:50px">
+    <h2>Scrivici!</h2>
+    <div class="contact-form">
+      <form id="partecipa" action="contattaci.php" method="POST">
+        <input type="text" placeholder="Nome" name="nome" id="nome">
+        <input type="text" placeholder="Cognome" name="cognome" id="cognome">
+        <input type="email" placeholder="Email" name="email" id="email">
+        <select name="newsletter" id="newsletter">
+          <option value="">Vuoi essere inserito nella newsletter?</option>
+          <option value="Si">Si</option>
+          <option value="No">No</option>
+        </select>
+        <textarea placeholder="Messaggio" name="messaggio" id="messaggio"></textarea>
+        <button class="btn" type="submit">Invia →</button>
+      </form>
+    </div>
+  </section>
+</div>
+  <!-- FOOTER -->
+  <footer>
+    <p>N.I.N.A APS<br>C.F. 98021140151<br>Via Belgirate, 15 Milano<br>Copyright 2026</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+document.querySelector(".hamburger").addEventListener("click", () => {
+  document.querySelector(".nav-links").classList.toggle("open");
+});
+
+// Apri i dropdown su mobile con il tocco
+document.querySelectorAll(".dropdown > a").forEach(link => {
+  link.addEventListener("click", (e) => {
+    if (window.innerWidth <= 1024) {
+      e.preventDefault();
+      link.parentElement.classList.toggle("open");
+    }
+  });
+});
+</script>
+</body>
+</html>
