@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NINA – Ne Intelligente Ne Artificiale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+.container-custom {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px; /* larghezza massima stile Bootstrap */
+}
+
+/* Breakpoint tablet */
+@media (max-width: 992px) {
+  .container-custom {
+    max-width: 900px;
+  }
+}
+
+/* Breakpoint iPad / small tablet */
+@media (max-width: 768px) {
+  .container-custom {
+    max-width: 700px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .container-custom {
+    width: 90%;      /* resta al 90% */
+    max-width: none; /* niente limite fisso */
+  }
+}
+
+    .text-center {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .grid-flex {
+      display: flex;
+      flex-wrap: wrap;
+  gap: 20px;
+}
+
+.box {
+  background: #eee;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1 1 calc(25% - 20px); /* 4 per riga su desktop */
+}
+
+/* Tablet (iPad) — 2 per riga */
+@media (max-width: 1024px) {
+  .box {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+/* Mobile — 1 per riga */
+@media (max-width: 600px) {
+  .box {
+    flex: 1 1 100%;
+  }
+}
+
+    .link-freccia {
+  text-decoration: none;
+  color: #777; /* grigio */
+  position: relative;
+  padding-left: 1.2em; /* spazio per la freccia */
+}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+   <nav>
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+<ul class="nav-links">
+  <li class="logo"><a href="index.html">Nina</a></li>
+  <li class="spacer"></li>
+  <li class="dropdown"><a href="#">Chi siamo</a>
+    <ul class="submenu">
+      <li><a href="manifesto.html">Manifesto</a></li>
+      <li><a href="#">Miss/vis</a></li>
+      <li><a href="#">Storia</a></li>
+      <li><a href="collaborazioni.html">Collaborazioni</a></li>
+      <li><a href="https://www.nina.watch/#links" target="_blank">Archivio Link</a></li>
+      <li><a href="https://www.nina.watch/#audio" target="_blank">Archivio Audio</a></li>
+    </ul>
+   </li>
+   <li class="dropdown">
+     <a href="cosa_facciamo.html">Cosa facciamo</a>
+    <ul class="submenu">
+      <li><a href="festival.html">Festival</a></li>
+      <li><a href="https://www.nina.watch/mostra-incomputabile/">Mostra</a></li>
+      <li><a href="sindacato.html">Sindacato</a></li>
+      <li><a href="rivista.html">Rivista</a></li>
+      <li><a href="incontri.html">Incontri</a></li>
+    </ul>
+    </li> 
+<li class="dropdown"><a href="partecipa.html">Partecipa</a>
+      <!--
+    <ul class="submenu">
+      <li><a href="#">Partecipa alle riunioni</a></li>
+      <li><a href="#">Ospita un evento</a></li>
+      <li><a href="#">Volontari per il festival</a></li>
+      <li><a href="#">Call aperte</a></li>
+    </ul>
+    -->
+  </li>
+  <li><a href="contattaci.html">Contatti</a></li>
+</ul>
+
+</nav>
+<br clear="all"><br clear="all"><br clear="all">
+<div class="container-custom">
+<h2 class="text-center">Parte 1 - Perimetro della discussione</h2>
+<div class="grid-flex">
+  <div class="box">L’intelligenza artificiale non è un’innovazione emersa dal nulla, semmai un’accelerazione di un processo già in corso, l’ultimo capitolo di una storia, quella dell’automazione che comincia con il telaio Jacquard e la macchina analitica di Babbage (1837). Lo stesso termine AI è del 1956, e sono di poco successive le espressioni machine learning, deep learning e reti neurali. Non sono “strumenti”, utensili, non sono semplici protesi ma mondi, abiti che mediano relazioni. Sono epistemologie che diventano infrastruttura.</div>
+  <div class="box">L’intelligenza artificiale non è intelligente. Quello a cui assistiamo è un gioco di prestigio: un complicato modello statistico in cui un software sembra darci una risposta a una domanda, ma in realtà questa cosa non è vera: da Alan Turing in poi è stato chiarito come la macchina non può “capire” nel senso che intendiamo noi la comprensione. Non c’è capacità di discernimento, non c’è capacità di giudizio, solo complicati calcoli statistici, probabilistici e algoritmi.</div>
+    <div class="box" style="background-color: lime;"></div>
+<div class="box">Tra le prime dieci imprese per capitalizzazione a livello globale, sette sono del settore digitale e un’ottava è Tesla (che produce auto & computer). Il digitale è, oggi, il principale motore di profitti e di accumulazione del capitale, come nel secolo scorso il principale motore erano le società del settore manifatturiero / automobilistico / fossile, soppiantate a inizio secolo dalle aziende della distribuzione.</div>
+</div>
+<div class="grid-flex">
+    <div class="box">Quello che sta succedendo è che una manciata di aziende (sei americane e tre cinesi) hanno un oligopolio sostanziale di queste tecnologie, quello che alcuni chiamano “tecno-feudalesimo”. Queste aziende possono decidere e fare il bello e il cattivo tempo rispetto a questi processi accumulativi mentre ci raccontano dell’inevitabilità dello sviluppo tecnologico come lo vogliono loro. La cosa drammatica è che tutto questo si cala in un contesto dove attori sociali che avrebbero dovuto avere funzioni importanti come i giornalisti o i decisori politici sono estremamente impreparati rispetto a questo tipo di considerazioni.</div>
+        <div class="box" style="background-color: #b48cff;"></div>
+  <div class="box">L’intelligenza artificiale generativa ha un elemento di differenza sostanziale rispetto alle altre innovazioni. La ruota, la macchina a vapore, la robotica hanno reso la nostra vita più semplice delegando alla tecnologia (e alla macchina poi) i compiti che ritenevamo più faticosi, per poterci dedicare ai compiti di tipo intellettuale qualitativamente più “alti”. Storicamente nella scala sociale erano i lavori più “bassi” a venire rimossi. L’intelligenza artificiale generativa invece pesca in mezzo, va a tagliare i lavori immateriali, cognitari che hanno un discreto livello di specializzazione e questa cosa non ha precedenti nella storia.</div>
+  <div class="box">Con l’avvento del capitalismo delle piattaforme, quello che negli anni 90 era il lavoro “creativo” ora viene messo a valore senza passare da un’organizzazione lavorativa: l’organizzazione del lavoro è stata sostituita dall’organizzazione delle piattaforme. La conseguenza di questo passaggio è che l'asuspicio di Keynes di lavorare quindici ore alla settimana descritto in “Prospettive economiche per i nostri nipoti” non si è realizzato. Oggi si discute di fine del lavoro salariato e siamo nell’epoca del lavoro senza fine, qualsiasi atto della nostra vita mediato dalla tecnologia è un atto produttivo di valore e quasi sempre non remunerato. L’intelligenza artificiale contribuisce a un processo di omologazione in un contesto in cui qualunque attività cerebrale è soggetta a estrazione di valore.</div>
+</div>
+<h2 class="text-center">Parte 2 - Considerazioni politiche</h2>
+<div class="grid-flex">
+    <div class="box">La tecnologia non è neutrale. Serve, dai tempi di Ned Ludd, per aumentare la produttività e abbassare i salari. La tecnologia ovviamente sortisce effetti positivi, infatti la critica non è sullo strumento in sé ma sulle finalità. Come diceva Keynes ci sarebbe la possibilità di lavorare quindici ore alla settimana, ma negli ultimi trent’anni le caratteristiche fondamentali del fordismo e del taylorismo, e cioè agganciare incrementi di produttività a incrementi di salari per garantire i consumi, non sta più funzionando. Sicuramente intelligenza artificiale e occupazione hanno delle correlazioni di breve periodo, ma la grande questione è collegare le innovazioni tecnologiche a un aumento dei redditi.</div>
+  <div class="box">Le nuove tecnologie, gli algoritmi di seconda generazione, l’AI generativa creano un’ibridazione tra l’elemento macchinico e quello umano, abbiamo un divenire umano della macchina e un divenire macchinico dell’uomo, una sorta di neo-taylorizzazione. Nella discussione sugli effetti occupazionali di queste tecnologie ci dimentichiamo spesso che queste tecnologie devono essere allenate, ovvero nutrite di dati per svolgere ogni compito. Possiamo dire provocatoriamente che la disoccupazione non esiste, la dicotomia vera è tra chi è occupato e percepisce un reddito e chi no.</div>
+  <div class="box">Come dice Kate Crawford nel suo saggio “Né intelligenti, né artificiali”, oggi il digitale e, nello specifico, l’intelligenza artificiale è uno strumento al servizio del potere economico: per i profitti prodotti, i dispositivi di sorveglianza sui lavoratori, la finanziarizzazione; e politico: per sorvegliare il dissenso, reprimere, chiudere le frontiere, fare la guerra.</div>
+  <div class="box" style="background-color: #ff2d6b;"></div>
+</div>
+<div class="grid-flex">
+    <div class="box">L’intelligenza artificiale non esiste separata dal mondo, bensì dipende interamente da un insieme molto ampio di strutture politiche e sociali. Non c'è nessuna intelligenza artificiale senza Big Tech. L’intelligenza artificiale non è una tecnica computazionale oggettiva, universale o neutrale. A causa del capitale necessario per istruire l’AI su larga scala e dei modi per ottimizzarla, i sistemi di AI sono in definitiva progettati per servire gli interessi dominanti.</div>
+  <div class="box">I sistemi di AI sono costruiti con le logiche del capitale, della polizia e della militarizzazione, e questa combinazione acuisce ulteriormente le asimmetrie di potere esistenti. Se applicati ai contesti sociali possono riprodurre e amplificare le disuguaglianze strutturalmente esistenti perché sono progettati per discriminare, amplificare le gerarchie e codificare classificazioni rigorose. L’intelligenza artificiale, quindi, è un’idea, un’infrastruttura, un’industria, è capitale altamente organizzato, una forma di esercizio di potere e un modo di vedere le cose. Per questo dobbiamo confrontarci con l’AI come forza politica, economica, culturale e scientifica.</div>
+  <div class="box">La AI ha bisogno di moltissima energia, moltissimi data center e moltissima acqua, portando all’estremo le conseguenze materiali del sistema digitale che già ci sono note. È impossibile separare la pressione sociale e ambientale che questo “estrattivismo” esercita sui lavoratori e sulle comunità da quella sugli ecosistemi. L’intelligenza artificiale va vista come un’industria estrattiva. Non si può parlare di AI senza parlare di big data, giganteschi set di dati pieni di conversazioni, selfie, bambini, testi, immagini, tutto per migliorare funzioni come il riconoscimento facciale, la predizione linguistica e il rilevamento di oggetti. In questo senso, l’intelligenza artificiale è un registro del potere.</div>
+  <div class="box">Spesso, si parla di transizioni gemelle per la transizione ecologica e digitale che si rafforzano a vicenda. Per molti aspetti è vero: la transizione ecologica, probabilmente, non potrà avvenire senza una contemporanea transizione digitale. Passare da un sistema energetico basato sulle fonti fossili a uno basato sulle fonti rinnovabili significa cambiare radicalmente approccio; significa passare da un sistema centralizzato che distribuisce energia prodotta da grandi centrali da mettere/tenere in funzione a seconda dell’andamento della domanda a un nuovo sistema basato su una distribuzione a livello locale della produzione di energia (intermittente); significa passare da un sistema dove produttore e consumatore sono soggetti diversi e separati a uno ibrido in cui anche i consumatori possono produrre parte dell’energia che consumano (dotandosi di pannelli e pale eoliche) contribuendo alla rete. Gestire tutto ciò, garantendo anche l’equilibrio della rete, non sarà possibile senza lo sviluppo del settore digitale e sistemi di machine learning applicati alla gestione dell’infrastruttura.</div>
+</div>
+<h2 class="text-center">Parte 3 - Rivendicazioni</h2>
+<div class="grid-flex">
+  <div class="box">I pozzi sono avvelenati. L’intelligenza artificiale è addestrata su dati che sono tutt’altro che oggettivi e imparziali, perciò contiene dei bias o “pregiudizi” e, funzionando su vasta scala, sistematizza questi bias amplificando così gli errori umani su una portata globale. L’algoritmo dell’AI non è in sé prevenuto, ma eredita delle discriminazioni che già avvenivano negli algoritmi dei social network e non solo (basti pensare all’algoritmo Hummingbird e alla google bubble) che, volutamente, non sono stati corretti. L’intelligenza artificiale è avvelenata dalle discriminazioni presenti nei dati che la alimentano. Il “data poisoning”, che è un termine che appartiene alla sicurezza informatica, ben descrive la realtà attuale fatta di output discriminatori che sono figli diretti delle discriminazioni originarie con cui l’AI è stata alimentata. La politica classificatoria è una prassi fondamentale nell’intelligenza artificiale. Le pratiche di classificazione danno forma al modo in cui l’intelligenza artificiale viene riconosciuta e prodotta, dai laboratori universitari all’industria tecnologica.</div>
+  <div class="box">Abbiamo bisogno di provare a scardinare questo sistema di potere centralizzato senza buttare via i benefici che potremmo ottenere dall’accelerazione della tecnologia. Dobbiamo chiedere e pretendere l’open access e la trasparenza. Chiedere che queste macchine siano progettate per essere ispezionabili: dobbiamo sapere con quale codice sono scritte e come sono state programmate. Chiedere che sia disponibile e ispezionabile il dataset: queste macchine sono addestrate con la conoscenza umana e alla conoscenza umana devono appartenere. Chiedere che siano decodificati gli algoritmi e tutti i percorsi che la macchina sceglie per prendere decisioni. Abbiamo bisogno di sapere che cosa c’è dentro per evitare i pregiudizi che possono generare. Aprire la “black box” e con essa i segreti industriali che contiene e che gli enormi valori industriali vengano redistribuiti, abbiamo diritto alla nostra cedola come azionisti della cittadinanza egualitaria nel mondo.</div>
+    <div class="box" style="background-color: #b48cff;"></div>
+  <div class="box">Dobbiamo chiedere che le macchine siano messe al servizio della collettività. Necessitiamo un approccio molto più radicale della battaglia molto umana, molto capitalistica, molto estrattiva, ma molto di retroguardia che è il tema del “proteggere le mie idee”. Le cause che sono state intentate, per esempio, dal New York Times e da altri soggetti che afferiscono al mondo intellettuale e culturale contro queste macchine sono rivolte prevalentemente ad ottenere una remunerazione per i loro materiali usati per addestrarle. È un modo per replicare i meccanismi del capitalismo estrattivo e non c’è alcuna pratica reale di attacco alle distorsioni di fondo del sistema. Dobbiamo rivendicare la trasparenza su quando vengono utilizzati i sistemi di intelligenza artificiale e che in una serie di ambiti le decisioni non siano automatiche ma mediate dall’essere umano.</div>
+</div>
+<div class="grid-flex">
+  <div class="box">L’intelligenza artificiale nasce con una funzione che è principalmente coloniale ed estrattiva. Senza correttivi in termini di tutela dei diritti, di ribaltamento dei bias nei sistemi predittivi, avremo un meccanismo di de-responsabilizzazione che aumenterà le forme discriminatorie. L’industria dell’AI ha tradizionalmente inteso il problema del pregiudizio (bias) alla stregua di un bug da correggere anziché come una caratteristica insita nella classificazione stessa. L’attenzione per una maggiore “equità” dei set di addestramento attraverso l’eliminazione dei termini escludenti e discriminatori, e quindi razzisti, sessisti, abilisti ecc., elude le dinamiche di potere della classificazione e preclude una valutazione più approfondita delle logiche sottostanti.</div>
+  <div class="box">L’AI act annunciato trionfalmente dall’Unione Europea come grande novità rischia di avere a sua volta dei problemi: si sta cercando di normare qualcosa che è in grande evoluzione e che è molto mutevole. Ci preoccupiamo perché in Cina usano già il social scoring, ma le premesse per arrivare a qualcosa di simile si stanno costruendo anche in Europa. L’Unione Europea sta tentando di regolamentare non la tecnologia (che va troppo veloce) ma gli usi definendo quelli proibiti, ad alto rischio e a basso rischio. È una visione accorta del problema tecnologico, ma ha degli enormi limiti: riguarda solamente l’Unione Europea; mentre queste macchine sono progettate e utilizzabili in tutto il mondo e, secondo molti, servirebbe una governance globale per decidere quali regole adottare. Il secondo limite dei regolamenti dell’Unione Europea è che, applicandosi ai nostri confini, stanno già generando cittadini di serie A e cittadini di serie B.</div>
+  <div class="box">Un approccio femminista ai dati è necessario per mettere in evidenza le diseguaglianze e le asimmetrie di potere nelle rappresentazioni, anche negli output, perché è anche da questi dati che poi conseguono tutta una serie di discriminazioni. Discutiamo di equità perché sentiamo che ci sia un gap da colmare. Viviamo in un mondo fortemente diseguale, iniquo, ingiusto e non possiamo aspettarci che il dato che alimenta l’intelligenza artificiale sia il massimo della virtù morale. Come dice Audre Lorde “gli strumenti del padrone non smantelleranno mai la casa del padrone”. L’importanza del dato va messa in relazione e compensata con saperi altri che non sono quantificabili come le capacità emotive e relazionali. Uno schema valoriale profondamente umano e non computazionabile.</div>
+  <div class="box">Esistono politiche collettive sostenibili distinte dall’estrazione di valore; ci sono beni comuni che vale la pena mantenere, mondi al di là del mercato e modi per vivere al di là della discriminazione e delle pratiche di ottimizzazione brutali. Se AI e algoritmi sono parte della vita allora è essenziale un’etica che si applichi all’AI e agli algoritmi e che possa pensare in modo diverso il valore del vivente e del non vivente.</div>
+</div>
+<p>Versione <a href="./pdf/20_passi.pdf" target="_blank" class="link-freccia text-center">pdf</a></p>
+  </div>
+
+  
+
+  <!-- FOOTER -->
+  <footer>
+    <p>N.I.N.A APS<br>C.F. 98021140151<br>Via Belgirate, 15 Milano<br>Copyright 2026</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+document.querySelector(".hamburger").addEventListener("click", () => {
+  document.querySelector(".nav-links").classList.toggle("open");
+});
+
+// Apri i dropdown su mobile con il tocco
+document.querySelectorAll(".dropdown > a").forEach(link => {
+  link.addEventListener("click", (e) => {
+    if (window.innerWidth <= 1024) {
+      e.preventDefault();
+      link.parentElement.classList.toggle("open");
+    }
+  });
+});
+</script>
+</body>
+</html>
