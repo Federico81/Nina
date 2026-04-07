@@ -39,16 +39,16 @@
   .hero-content .dates { font-family: var(--font-display); font-size: clamp(1.3rem, 2.8vw, 2rem); font-weight: 700; color: var(--white); margin-top: 0.4rem; }
   .hero-content .location { font-family: var(--font-display); font-size: clamp(1rem, 2vw, 1.4rem); color: var(--white); opacity: 0.75; }
 
-  .intro-section { padding: 5rem 12vw; max-width: 1000px; margin: 0 auto; }
+  .intro-section { padding: 4rem 8vw;; max-width: 1000px; margin: 0 auto; }
   .intro-section p { font-size: clamp(1rem, 1.8vw, 1.25rem); font-weight: 400; line-height: 1.8; color: rgba(255,255,255,0.88); margin-bottom: 1.4rem; }
   .intro-section p:last-child { margin-bottom: 0; }
 
-  .section-title { font-family: var(--font-display); font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 900; letter-spacing: -0.02em; color: var(--lime); margin-bottom: 3rem; }
+  .section-title { font-family: var(--font-display); font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 700; letter-spacing: -0.02em; color: var(--lime); margin-bottom: 3rem; }
 
   .ospiti-section { padding: 4rem 8vw; border-top: 1px solid rgba(255,255,255,0.1); }
   .ospiti-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 2rem 1.5rem; }
   .ospite-card { display: flex; flex-direction: column; gap: 0.6rem; }
-  .ospite-img { width: 100%; aspect-ratio: 3/4; overflow: hidden; background: #1a1a1a; }
+  .ospite-img { width: 100%; aspect-ratio: 3/4; overflow: hidden; background: #1a1a1a;}
   .ospite-img img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(20%); transition: filter 0.3s, transform 0.4s; }
   .ospite-card:hover .ospite-img img { filter: grayscale(0%); transform: scale(1.03); }
   .ospite-name { font-family: var(--font-display); font-size: 0.78rem; font-weight: 700; color: var(--white); line-height: 1.3; }
@@ -87,6 +87,47 @@
   .artista-num { font-family: var(--font-mono); font-size: 0.6rem; color: var(--lime); letter-spacing: 0.1em; margin-bottom: 0.6rem; }
   .artista-name { font-family: var(--font-display); font-size: 0.82rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem; line-height: 1.3; }
   .artista-bio { font-family: var(--font-body); font-size: 0.78rem; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+ .patrocinio-section {
+  padding: 4rem 8vw;
+  background-color: white;
+  color: var(--black);
+}
+.patrocinio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.patrocinio-col h3 {
+  margin: 0 0 1.5rem 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.patrocinio-logos {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.patrocinio-logos-2 {
+  grid-template-columns: repeat(2, 120px);
+}
+
+.patrocinio-logos-1 {
+  grid-template-columns: 120px;
+}
+
+.patrocinio-logos img {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
 
 .container-flex {
   display: flex;
@@ -166,7 +207,6 @@
     </div>
   </section>
 
-
 <section class="intro-section" style="text-align: justify;">
   <p>Il festival è dedicato a tecniche, smanettone, artiste, teoriche, curiose e scettiche che hanno progetti, artefatti o contenuti da condividere con noi e con chi ci sarà. Il tema che abbiamo identificato è la relazione tra l'incomputabile — tutto ciò che non può e non "merita" di essere calcolato, o non dovrebbe esserlo — e l'AI generativa, gli LLM e in generale la governance algoritmica della vita.</p>
   <p>Se è vero da un lato che l'intelligenza artificiale si mostra con un divenire umano della macchina è vero anche il contrario: assistiamo a un divenire macchinico della specie.</p>
@@ -185,7 +225,7 @@
 <section class="ospiti-section">
   <h2 class="section-title">Ospiti solo a Milano</h2>
   <div class="ospiti-grid">
-      <div class="ospite-card"><div class="ospite-img"><img src="person/beatrice_gobbo.png" alt="Beatrice Gobbo"></div><p class="ospite-name">Beatrice Gobbo</p><p class="ospite-role">Ricercatrice del politecnico – Nina.</p></div>
+      <div class="ospite-card"><div class="ospite-img"><img src="person/ospite.png" alt="Beatrice Gobbo"></div><p class="ospite-name">Beatrice Gobbo</p><p class="ospite-role">Ricercatrice del politecnico – Nina.</p></div>
       <div class="ospite-card"><div class="ospite-img"><img src="person/marco_mancuso.webp" alt="Marco Mancuso"></div><p class="ospite-name">Marco Mancuso</p><p class="ospite-role">Docente Università di Bologna e Politecnico delle Arti di Bergamo</p></div>
       <div class="ospite-card"><div class="ospite-img"><img src="person/domenico_quaranta.webp" alt="Domenico Quaranta"></div><p class="ospite-name">Domenico Quaranta</p><p class="ospite-role">Critico d'arte, curatore, docente alla Cattolica</p></div>
       <div class="ospite-card"><div class="ospite-img"><img src="person/nick_couldry.jpg" alt="Nick Couldry"></div><p class="ospite-name">Nick Couldry</p><p class="ospite-role">Professore emerito – London School of Economics</p></div>
@@ -297,24 +337,28 @@
     <div class="artista-card"><p class="artista-num">03</p><p class="artista-name">Hiba Ali</p><p class="artista-bio">Artista dei nuovi media, educatrice, DJ e produttrice di musica sperimentale. Tra Chicago, Austin e Toronto.</p></div>
     <div class="artista-card"><p class="artista-num">04</p><p class="artista-name">Michelle Tylicki</p><p class="artista-bio">Artista newyorchese, opera principalmente tra Londra e Lisbona.</p></div>
   </div>
+</section>
 
-</section>
-<section class="ospiti-section">
-  <div class="container-flex">
-    <div class="item">
-      <p>Con il Patrocinio di:</p>
+
+<section class="patrocinio-section">
+  <div class="patrocinio-grid">
+    <div class="patrocinio-col">
+      <h3>CON IL PATROCINIO DI</h3>
+      <div class="patrocinio-logos patrocinio-logos-2">
         <img src="https://www.aarome.org/sites/default/files/inline-images/roma-assessorato-cultura_2.jpg" alt="Assessorato alla Cultura Comune di Roma" width="300px">
-    </div>
-    <div class="item">
-      <p>Con il Patrocinio di:</p>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfNosgNpvdWObAGVMzdjLxI_9dqzcZAvTycg&s" alt="Municipio 9 di Milano" width="200px">
+     </div>
     </div>
-    <div class="item">
-      <p>Partner culturale:</p>
-        <img src="https://scontent.fmxp13-1.fna.fbcdn.net/v/t39.30808-6/305455405_458032139699140_5002275605298851057_n.png?_nc_cat=1&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=sOytaT6ltKAQ7kNvwHgvOD9&_nc_oc=Adq1IUMEhks4ZkDP-Wi1Z1TSHYjktGrQHcbOfHkjjEuLdaI1XBnTON8xzh9EVA36f6FS9J3x4sC4iGcTY5S9eMIz&_nc_zt=23&_nc_ht=scontent.fmxp13-1.fna&_nc_gid=BdTQmdnAIrTysBwv9lFzng&_nc_ss=7a3a8&oh=00_Af0oJH3hIFQYkzUWr3K2uT8yGNm2lGcqjIWHnqyxbGKG7Q&oe=69D43D5E" alt="Museo nazionale della scienza e della tecnologia Leonardo da Vinci" width="200px">
+
+    <div class="patrocinio-col">
+      <h3>PARTNER CULTURALE</h3>
+      <div class="patrocinio-logos patrocinio-logos-1">
+        <img src="img/must_logo.svg" alt="Museo nazionale della scienza e della tecnologia Leonardo da Vinci" width="200px">
+      </div>
     </div>
-</div>
+  </div>
 </section>
+
 
 <footer>
   <p>N.I.N.A APS<br>C.F. 98021140151<br>Via Belgirate, 15 Milano<br>Copyright 2026</p>
