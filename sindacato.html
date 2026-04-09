@@ -7,16 +7,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    :root { --page-color: #b48cff; --page-text: #0a0a0a; }
+    :root { --page-color: #b48cff; --page-text: #fffefe; --lime: #c8f500;}
 
     body { background: var(--page-color); color: var(--page-text); min-height: 100vh; }
 
-    nav { background: var(--page-color); border-bottom: 1px solid rgba(0,0,0,0.12); }
-    .nav-logo { color: var(--page-text); }
-    .nav-links a { color: rgba(0,0,0,0.5); }
-    .nav-links a:hover, .nav-links a.active { color: var(--page-text); text-decoration: underline; text-underline-offset: 4px; }
+    nav { background: var(--black); border-bottom: 1px solid rgba(0,0,0,0.12); }
+    .nav-logo { color: var(--white); }
+    .nav-links a { color: var(--white); }
+    .nav-links a:hover, .nav-links a.active { color: var(--lime); text-decoration: underline; text-underline-offset: 4px; }
 
     /* ── LAYOUT ── */
     .page-wrap {
@@ -36,7 +38,7 @@
     h1 {
       font-family: var(--font-display);
       font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 900;
+      font-weight: 00;
       letter-spacing: -0.04em;
       line-height: 1;
       margin-bottom: 2rem;
@@ -47,7 +49,7 @@
       font-family: var(--font-body);
       font-style: italic;
       font-size: 0.95rem;
-      color: rgba(0,0,0,0.7);
+      color: var(--white);
       line-height: 1.5;
       margin-bottom: 2.5rem;
     }
@@ -72,6 +74,7 @@
 
     .lead {
       font-family: var(--font-display);
+      color: var(--white);
       font-size: clamp(1.2rem, 2.2vw, 1.65rem);
       font-weight: 700;
       letter-spacing: -0.02em;
@@ -80,7 +83,7 @@
     }
 
     .lead a {
-      color: inherit;
+      color: var(--lime);
       text-decoration: underline;
       text-underline-offset: 4px;
     }
@@ -88,13 +91,13 @@
     .body-text {
       font-family: var(--font-body);
       font-size: clamp(0.9rem, 1.3vw, 1rem);
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.75;
-      color: rgba(0,0,0,0.85);
+      color: var(--white);
       margin-bottom: 1rem;
     }
 
-    .body-text + .body-text { margin-top: 0; }
+    .body-text + .body-text { margin-top: 0; color: var(--white); }
 
     ul.actions-list {
       margin: 0.5rem 0 1rem 0;
@@ -105,9 +108,9 @@
     ul.actions-list li {
       font-family: var(--font-body);
       font-size: clamp(0.9rem, 1.3vw, 1rem);
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.75;
-      color: rgba(0,0,0,0.85);
+      color: var(--white);
       padding-left: 1.2rem;
       position: relative;
       margin-bottom: 0.4rem;
@@ -119,7 +122,7 @@
       left: 0;
       font-size: 0.6rem;
       top: 0.45rem;
-      color: rgba(0,0,0,0.5);
+      color: var(--white);
     }
 
     .body-text a, ul.actions-list a {
@@ -149,6 +152,10 @@
       .col-right { margin-top: 0; }
       h1 { grid-column: 1; }
     }
+
+    .label{
+      border-bottom: none;}
+
   </style>
 </head>
 <body>
@@ -201,10 +208,11 @@
 
     <h1>Sindacato</h1>
 
-    <div class="col-left">
-      <p class="launch-date"><em>Presentazione e Lancio:<br><strong>9 maggio 2026</strong></em></p>
+    <p class="lead">Questo progetto del <em>sindacato digitale universale</em> dà una cornice politica più definita, una continuità politica al documento/progetto del secondo anno di Nina e cioè <a href="https://www.nina.watch/alice/" target="_blank">Alice</a>.</p>
 
-      <p class="lead">Questo progetto del sindacato digitale universale dà una cornice politica più definita, possiamo dire dà una continuità politica al documento/progetto del secondo anno di Nina e cioè <a href="https://www.nina.watch/alice/" target="_blank">Alice</a>.</p>
+
+    <div class="col-left">
+      <p class="launch-date"><em>Presentazione e Lancio — <strong>9 maggio 2026</strong></em></p>
 
       <p class="body-text">Le premesse che ci hanno portato a ipotizzare e sperare in un'alleanza tra 1.idee 2.capacità tecniche 3.infrastrutture dati / server e 4.denaro sono lì elencate e rimangono valilde.<br>
       Che caratteristiche devono avere queste azioni?</p>
@@ -219,14 +227,32 @@
       <p class="body-text">Quelle che seguono sono alcune delle prime possibili azioni del sindacato. In particolare le prime tre verranno presentate durante il <a href="festival.html">festival di Nina</a> e verranno descritte nelle <a href="rivista.html">pagine della rivista</a>.</p>
     </div>
 
-    <div class="col-right">
+    <!-- <div class="col-right">
       <a href="#" class="scarica">Scarica i Materiali</a>
       <a href="https://www.nina.watch/sindacato/pdf/premesse_politiche.pdf" target="_blank" class="scarica">Leggi le Premesse Politiche →</a>
       <a href="https://www.nina.watch/sindacato/pdf/manifesto.pdf" target="_blank" class="scarica">Leggi il Manifesto →</a>
       <a href="https://www.nina.watch/riviste/pdf/5.Per_un_sindacato_digitale_universale.pdf" target="_blank" class="scarica">Leggi l'articolo per la rivista →</a>
 
-    </div>
+    </div> -->
 
+    <div class="label">Materiali </p>
+  <div class="d-flex flex-wrap gap-3 mt-3">
+    <a href="evento-festival.ics" download class="festival-calendar-link">
+      <span class="btn-icon"><i class="bi bi-file-earmark-text"></i></span>
+      <span>Leggi le Premesse Politiche</span>
+    </a>
+<br>
+    <a href="manifesto.pdf" class="festival-calendar-link">
+      <span class="btn-icon"><i class="bi bi-file-earmark-text"></i></span>
+      <span>Leggi il Manifesto</span>
+    </a>
+<br>
+    <a href="festival.html" class="festival-calendar-link">
+      <span class="btn-icon"><i class="bi bi-file-earmark-text"></i></span>
+      <span>Leggi l'articolo per la rivista</span>
+    </a>
+  </div>
+</div> 
   </div>
 
   <footer>
