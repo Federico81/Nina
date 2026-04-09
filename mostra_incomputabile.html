@@ -1,84 +1,324 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="it">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nina - Festival - Mostra dell'incomputabile</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NINA – Sindacato</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Luckiest+Guy&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
-
-      <link
-    href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
-    rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- bootstrap icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link href="css/stile.css" rel="stylesheet">
   <style>
-    label {
-      font-weight: bold;
-      padding: 10px;
-      border-radius: 10px 10px 0px 0px;
-      border-color: 1px solid #000
+    :root {
+      --page-color:  #c8f500;
+      --page-text: var(--black);
     }
 
-    .bg-nero {
-      background-color: #000;
-      color: #dfff6b;
+    body {
+      background: var(--page-color);
+      color: var(--black);
+      min-height: 100vh;
     }
 
-    #giallo {
-      color: #dfff6b;
-      display: inline-block;
-      margin-right: 20px;
-      font-family: "Fragment Mono", monospace;
+    nav {
+      background: var(--black);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .nav-logo {
+      color: var(--white);
+    }
+
+    .nav-links a {
+      color: var(--white);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--lime);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* ── LAYOUT ── */
+    .page-wrap {
+      margin-top: 48px;
+      padding: 4rem 8vw 6rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto 1fr;
+      gap: 0 4vw;
+      min-height: calc(100vh - 48px - 80px);
+    }
+
+    /* Col left spans all rows */
+    .col-left {
+      grid-column: 1;
+    }
+
+    .col-right {
+      grid-column: 2;
+      padding-top: 0.2rem;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 00;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 2rem;
+      grid-column: 1 / -1;
+    }
+
+    .launch-date {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--black);
+      line-height: 1.5;
+      margin-bottom: 2.5rem;
+    }
+
+    .launch-date strong {
+      font-weight: 500;
+    }
+
+    .scarica {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1.8vw, 1.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--page-text);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.2rem;
+      transition: opacity 0.2s;
+    }
+
+    .scarica:hover {
+      opacity: 0.6;
+    }
+
+    .lead {
+      font-family: var(--font-display);
+      color: var(--black);
+      font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.35;
+      margin-bottom: 2rem;
+    }
+
+    .lead a {
+      color: var(--lime);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .body-text {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.3vw, 1rem);
       font-weight: 400;
-      font-style: normal;
+      line-height: 1.75;
+      color: var(--black);
+      margin-bottom: 1rem;
     }
 
-    .hanken-grotesk {
-      font-family: "Hanken Grotesk", sans-serif;
-      font-optical-sizing: auto;
-      font-weight: weight;
-      font-style: normal;
+    .body-text+.body-text {
+      margin-top: 0;
+      color: var(--black);
+    }
+
+    ul.actions-list {
+      margin: 0.5rem 0 1rem 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul.actions-list li {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.3vw, 1rem);
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--black);
+      padding-left: 1.2rem;
+      position: relative;
+      margin-bottom: 0.4rem;
+    }
+
+    ul.actions-list li::before {
+      content: '▪';
+      position: absolute;
+      left: 0;
+      font-size: 0.6rem;
+      top: 0.45rem;
+      color: var(--black);
+    }
+
+    .body-text a,
+    ul.actions-list a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    footer p {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: rgba(255, 255, 255, 0.35);
+      letter-spacing: 0.1em;
+      line-height: 2;
+      text-transform: uppercase;
+    }
+
+
+      /* FORM */
+/* Sfondo generale */
+body {
+  background-color: #cdea4f;
+}
+
+/* Font (se usi Hanken Grotesk) */
+.hanken-grotesk {
+  font-family: 'Hanken Grotesk', sans-serif;
+}
+
+/* Titoli */
+.lead {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.fs-3 {
+  font-size: 30px !important;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+/* Form container */
+#idee {
+  padding: 10px 5px;
+  background-size: cover;
+}
+
+/* Label nere */
+.bg-nero {
+  background: #000;
+  color: #dfff3f;
+  padding: 10px 14px;
+  border-radius: 10px;
+  display: inline-block;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.form-control,
+.form-select {
+  background: #e9e9e9;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 16px;
+  box-shadow: none;
+}
+
+textarea.form-control {
+  min-height: 150px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background: #e9e9e9;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.2);
+  border: none;
+}
+
+.form-label {
+  display: inline-block;
+  margin-top: 20px;
+  width: fit-content; 
+
+}
+
+.mb-3 {
+  display: flex;
+  flex-direction: column; /* mette label sopra input */
+}
+
+/* Select stile */
+.form-select {
+  appearance: none;
+}
+
+.open-call-bar {
+  width: 100%;
+  background: #000;
+  color: #dfff3f;
+  overflow: hidden;
+  white-space: nowrap;
+  position: fixed;
+}
+
+.open-call-track {
+  display: inline-block;
+  padding: 10px 0;
+  animation: scrollText 20s linear infinite;
+}
+
+@keyframes scrollText {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive migliorato */
+@media (max-width: 768px) {
+  .fs-3 {
+    font-size: 26px !important;
+  }
+}
+
+
+    @media (max-width: 768px) {
+      .page-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .col-right {
+        margin-top: 0;
+      }
+
+      h1 {
+        grid-column: 1;
+      }
+    }
+
+    .label {
+      border-bottom: none;
     }
   </style>
-
 </head>
 
 <body>
-  <!--
-    <div class="container-fluid bg-giallo">
-      <div class="row">
-        <div class="col-md-3 border border-white p-3" align="center" onclick="location.href='../index.html'" style="cursor:pointer;">
-          <img src="../img/logo.png" width="130">
-        </div>
-        <div class="col-md-3 border border-white p-3" align="center" onclick="location.href='/rivista/'" style="cursor:pointer;">
-          <h2 class="luckiest-guy-regular mt-2">Rivista</h2>
-        </div>
-        <div class="col-md-3 border border-white p-3" align="center" onclick="location.href='/sindacato/'" style="cursor:pointer;">
-          <h2 class="luckiest-guy-regular mt-2">Sindacato</h2>
-        </div>
-        <div class="col-md-3 border border-white p-3 bg-white" align="center" onclick="location.href='/festival/'" style="cursor:pointer;">
-          <h2 class="luckiest-guy-regular mt-2">Festival</h2>
-        </div>
-      </div>
-    </div>
-    -->
 
-  <nav>
+  <nav class="navbar navbar-expand-lg">
     <div class="hamburger">
       <span></span>
       <span></span>
@@ -108,73 +348,69 @@
         </ul>
       </li>
       <li class="dropdown"><a href="partecipa.html">Partecipa</a>
-        <!--
     <ul class="submenu">
-      <li><a href="#">Partecipa alle riunioni</a></li>
-      <li><a href="#">Ospita un evento</a></li>
-      <li><a href="#">Volontari per il festival</a></li>
-      <li><a href="#">Call aperte</a></li>
-    </ul>
-    -->
+
       </li>
       <li><a href="contattaci.html">Contatti</a></li>
     </ul>
 
   </nav>
-    <div class="container">
 
-      <div class="row">
-        <p id="giallo" class="text-center">OPEN CALL - INVITO APERTO - CONCORSO - BANDO - OPEN CALL - INVITO APERTO -
-          CONCORSO - BANDO </p>
-      </div>
-    </div>
+      <div class="open-call-bar">
+  <div class="open-call-track">
+    OPEN CALL – INVITO APERTO – CONCORSO – BANDO – OPEN CALL – INVITO APERTO – CONCORSO – BANDO – OPEN CALL – INVITO APERTO – CONCORSO – BANDO – OPEN CALL – INVITO APERTO – CONCORSO – BANDO –     OPEN CALL – INVITO APERTO – CONCORSO – BANDO – OPEN CALL – INVITO APERTO – CONCORSO – BANDO – OPEN CALL – INVITO APERTO – CONCORSO – BANDO – OPEN CALL – INVITO APERTO – CONCORSO – BANDO –
+
   </div>
+</div>
 
-  <div class="container-fluid" id="contenuto" style="background-color: #dfff6b;">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 p-3">
-          <h4>Mostra dell'incomputabile</h4>
-          <p class="text-start hanken-grotesk">8 maggio al <b>Nuovo Armenia</b><br>Via Livigno 9, Milano<br>&amp;
-            <b>Casetta rossa</b><br>Via Magnaghi 14, Roma</p>
-          <h1 class="fs-1 hanken-grotesk fw-light" style="font-size:60px!important">Se il potere oggi passa dal calcolo,
-            che cosa significa non essere computabili?</h1>
-          <p class="text-start fs-4 hanken-grotesk">L’intelligenza artificiale e i sistemi computazionali sono oggi
-            parte integrante delle infrastrutture che organizzano il mondo contemporaneo. Algoritmi e modelli predittivi
-            influenzano decisioni, comportamenti e forme di relazione. Allo stesso tempo, esistono dimensioni
-            dell’esperienza umana che non possono essere completamente tradotte in calcolo.</p>
-          <p class="text-start hanken-grotesk">La Mostra dell’Incomputabile nasce per esplorare queste zone di attrito
-            tra ciò che è computabile e ciò che non lo è, aprendo uno spazio di riflessione critica e artistica su ciò
-            che resiste alla formalizzazione.
-            <br><br>
-            Un’esplorazione artistica di ciò che l’intelligenza artificiale può simulare, ma non vivere. Di ciò che non
-            è solo individuale, ma emerge insieme: relazioni, attriti, cure, immaginari comuni. L’incomputabile viene
-            qui definito come l’insieme di processi e pratiche che resistono alla formalizzazione algoritmica, non
-            perché irrazionali, ma perché situati, contestuali e relazionali, e quindi non generalizzabili né
-            modellizzabili in forma astratta.
-            <br><br>
-            In dialogo con il tema del festival “ALICE. Arrivano le Intelligenze Collettive”, cerchiamo opere che
-            mettano al centro l’umano come processo condiviso, fragile, situato.
-            Opere che interrogano il rapporto tra AI e umanità da più prospettive: poetiche, politiche, emotive,
-            corporee, speculative.
-            Opere che non rispondono, ma aprono.
-            <br><br>
-            Cerchiamo: opere d’arte visive, installazioni, performance, video, musica e sound, poesia e parola, progetti
-            ibridi, difficili da classificare
-            Lmostra si terrà venerdì 8 maggio, a Milano (Dergano/Bovisa) e a Roma.
-            <br><br>
-            Se hai un’idea, un’intuizione, un frammento che senti incomputabile mandacelo. Anche (soprattutto) se non
-            sai ancora esattamente cosa diventerà.
-            <br><br>
-            Modalità e scadenze Le proposte (anche in forma non definitiva) dovranno essere inviate entro 16/04/2026.
-            Saranno valutate sulla base della pertinenza al tema, della solidità concettuale e della capacità di
-            interrogare criticamente il rapporto tra computazione, intelligenza collettiva e incomputabile.
-          </p>
-        </div>
-        <div class="col-md-4 p-3">
-          <p class="text-start fs-3 hanken-grotesk">Scadenza 15 Aprile</p>
+  <div class="page-wrap">
+
+    <h1>Mostra dell'incomputabile</h1>
+
+    <div class="col-left">
+      <p class="launch-date">Presentazione e Lancio: <br>8 maggio 2026<br>
+        <b>Milano, Nuovo Armenia, Via Livigno 9<br></b>
+          <b>Roma, Casetta rossa, Via Magnaghi 14</b></p>
+      <p class="lead">Se il potere oggi passa dal calcolo,
+        che cosa significa non essere computabili?</p>
+
+      <p class="body-text">L’intelligenza artificiale e i sistemi computazionali sono oggi
+        parte integrante delle infrastrutture che organizzano il mondo contemporaneo. Algoritmi e modelli predittivi
+        influenzano decisioni, comportamenti e forme di relazione. Allo stesso tempo, esistono dimensioni
+        dell’esperienza umana che non possono essere completamente tradotte in calcolo.</p>
+      <p class="body-text">La Mostra dell’Incomputabile nasce per esplorare queste zone di attrito
+        tra ciò che è computabile e ciò che non lo è, aprendo uno spazio di riflessione critica e artistica su ciò
+        che resiste alla formalizzazione.
+        <br><br>
+        Un’esplorazione artistica di ciò che l’intelligenza artificiale può simulare, ma non vivere. Di ciò che non
+        è solo individuale, ma emerge insieme: relazioni, attriti, cure, immaginari comuni. L’incomputabile viene
+        qui definito come l’insieme di processi e pratiche che resistono alla formalizzazione algoritmica, non
+        perché irrazionali, ma perché situati, contestuali e relazionali, e quindi non generalizzabili né
+        modellizzabili in forma astratta.
+        <br><br>
+        In dialogo con il tema del festival “ALICE. Arrivano le Intelligenze Collettive”, cerchiamo opere che
+        mettano al centro l’umano come processo condiviso, fragile, situato.
+        Opere che interrogano il rapporto tra AI e umanità da più prospettive: poetiche, politiche, emotive,
+        corporee, speculative.
+        Opere che non rispondono, ma aprono.
+        <br><br>
+        Cerchiamo: opere d’arte visive, installazioni, performance, video, musica e sound, poesia e parola, progetti
+        ibridi, difficili da classificare
+        Lmostra si terrà venerdì 8 maggio, a Milano (Dergano/Bovisa) e a Roma.
+        <br><br>
+        Se hai un’idea, un’intuizione, un frammento che senti incomputabile mandacelo. Anche (soprattutto) se non
+        sai ancora esattamente cosa diventerà.
+        <br><br>
+        Modalità e scadenze Le proposte (anche in forma non definitiva) dovranno essere inviate entro 16/04/2026.
+        Saranno valutate sulla base della pertinenza al tema, della solidità concettuale e della capacità di
+        interrogare criticamente il rapporto tra computazione, intelligenza collettiva e incomputabile.
+      </p>
+    </div>
+
+   <div class="col-md-4 p-3">
+          <p class="lead">Scadenza 15 Aprile</p>
           <p class="text-start fs-3 hanken-grotesk">Se hai un'intuzione incomputabile... mandacela!</p>
-          <form id="idee" action="mostra.php" method="POST" style="background-image: url(img/sfondo3.png);">
+          <form id="idee" action="mostra.php" method="POST" style="background-image: url(img/background_form.png);">
             <div class="mb-3 mt-1">
               <label for="idea" class="form-label bg-nero hanken-grotesk">Inserisci il titolo</label>
               <input type="text" class="form-control" name="titolo" id="titolo" rows="3">
@@ -207,32 +443,26 @@
           </form>
         </div>
       </div>
-
-    </div>
-    <div class="row bg-nero p-4 mt-2">
-      <p id="giallo" class="text-center">OPEN CALL - INVITO APERTO - CONCORSO - BANDO - OPEN CALL - INVITO APERTO -
-        CONCORSO - BANDO </p>
-    </div>
   </div>
+
+  <footer>
+    <p>N.I.N.A APS<br>C.F. 98021140151<br>Via Belgirate, 15 Milano<br>Copyright 2026</p>
+  </footer>
   <script>
-    function aggiornaSpazio() {
-      const header = document.getElementById('header-fisso');
-      const contenuto = document.getElementById('contenuto');
+    document.querySelector(".hamburger").addEventListener("click", () => {
+      document.querySelector(".nav-links").classList.toggle("open");
+    });
 
-      const altezza = header.offsetHeight;
-      contenuto.style.paddingTop = altezza + 'px';
-    }
-
-    // Calcolo iniziale
-    aggiornaSpazio();
-
-    // Ricalcola se la finestra cambia dimensione
-    window.addEventListener('resize', aggiornaSpazio);
+    // Apri i dropdown su mobile con il tocco
+    document.querySelectorAll(".dropdown > a").forEach(link => {
+      link.addEventListener("click", (e) => {
+        if (window.innerWidth <= 1024) {
+          e.preventDefault();
+          link.parentElement.classList.toggle("open");
+        }
+      });
+    });
   </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
 </body>
 
 </html>
