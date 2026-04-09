@@ -6,17 +6,18 @@
   <title>NINA – Rivista</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    :root { --page-color: #ff2d6b; --page-text: #0a0a0a; }
+    :root { --page-color: #ff2d6b; --page-text: var(--white); }
 
     body { background: var(--page-color); color: var(--page-text); min-height: 100vh; }
 
-    nav { background: var(--page-color); border-bottom: 1px solid rgba(0,0,0,0.12); }
-    .nav-logo { color: var(--page-text); }
-    .nav-links a { color: rgba(0,0,0,0.5); }
-    .nav-links a:hover, .nav-links a.active { color: var(--page-text); text-decoration: underline; text-underline-offset: 4px; }
+    nav { background: var(--black); border-bottom: 1px solid rgba(0,0,0,0.12); }
+    .nav-logo { color: var(--white); }
+    .nav-links a { color: var(--white); }
+    .nav-links a:hover, .nav-links a.active { color: var(--lime); text-decoration: underline; text-underline-offset: 4px; }
 
     /* ── LAYOUT ── */
     .page-wrap {
@@ -29,13 +30,14 @@
       min-height: calc(100vh - 48px - 80px);
     }
 
+    /* Col left spans all rows */
     .col-left { grid-column: 1; }
     .col-right { grid-column: 2; padding-top: 0.2rem; }
 
     h1 {
       font-family: var(--font-display);
       font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 900;
+      font-weight: 00;
       letter-spacing: -0.04em;
       line-height: 1;
       margin-bottom: 2rem;
@@ -46,7 +48,7 @@
       font-family: var(--font-body);
       font-style: italic;
       font-size: 0.95rem;
-      color: rgba(0,0,0,0.7);
+      color: var(--white);
       line-height: 1.5;
       margin-bottom: 2.5rem;
     }
@@ -71,6 +73,7 @@
 
     .lead {
       font-family: var(--font-display);
+      color: var(--white);
       font-size: clamp(1.2rem, 2.2vw, 1.65rem);
       font-weight: 700;
       letter-spacing: -0.02em;
@@ -78,20 +81,79 @@
       margin-bottom: 2rem;
     }
 
+    .lead a {
+      color: var(--lime);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
     .body-text {
       font-family: var(--font-body);
       font-size: clamp(0.9rem, 1.3vw, 1rem);
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.75;
-      color: rgba(0,0,0,0.85);
+      color: var(--white);
       margin-bottom: 1rem;
     }
 
-    .body-text a {
+    .body-text + .body-text { margin-top: 0; color: var(--white); }
+
+    ul.actions-list {
+      margin: 0.5rem 0 1rem 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul.actions-list li {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.3vw, 1rem);
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--white);
+      padding-left: 1.2rem;
+      position: relative;
+      margin-bottom: 0.4rem;
+    }
+
+    ul.actions-list li::before {
+      content: '▪';
+      position: absolute;
+      left: 0;
+      font-size: 0.6rem;
+      top: 0.45rem;
+      color: var(--white);
+    }
+
+    .body-text a, ul.actions-list a {
       color: inherit;
       text-decoration: underline;
       text-underline-offset: 3px;
     }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    footer p {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.1em;
+      line-height: 2;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrap { grid-template-columns: 1fr; }
+      .col-right { margin-top: 0; }
+      h1 { grid-column: 1; }
+    }
+
+    .label{
+      border-bottom: none;}
 
     .spacer { height: 1.5rem; }
 
@@ -170,7 +232,7 @@
     <h1>Rivista</h1>
 
     <div class="col-left">
-      <p class="launch-date"><em>Presentazione e Lancio:<br><strong>9 maggio 2026 - Roma</strong></em><br><strong>10 maggio 2026 - Milano</strong></em></p>
+      <p class="launch-date"><em>Presentazione e Lancio: <br><strong>9 maggio 2026 - Roma</strong></em><br><strong>10 maggio 2026 - Milano</strong></em></p>
 
       <p class="lead">Perché fare una rivista, un manuale di autodifesa e contrattacco digitale nel 2025? Perché abbiamo bisogno di sgrossare il dizionario di fronte a una tecnologia che corre velocissima.</p>
 
@@ -187,11 +249,25 @@
       <p class="body-text">Le proposte che vediamo ci sembrano parziali perché non si pongono il problema dei meccanismi che sottendono l'estrazione dei dati. Alla produzione di dopamina dobbiamo rispondere con la relazione reale che è intelligenza autonoma di specie.</p>
     </div>
 
-    <div class="col-right">
+    <!-- <div class="col-right">
       <a href="#" target="_blank" class="scarica">Scarica i Materiali</a><br>
       <a href="https://www.nina.watch/rivista/pdf/pitch_giuseppe_genna.pdf" target="_blank" class="scarica">Il pitch →</a><br>
       <a href="https://www.nina.watch/rivista/pdf/Intelligenza_Autonoma_rivista.pdf" target="_blank" class="scarica">Prime idee di cornice e struttura →</a>
-    </div>
+    </div> --> 
+
+    <div class="label">Materiali </p>
+  <div class="d-flex flex-wrap gap-3 mt-3">
+    <a href="ttps://www.nina.watch/rivista/pdf/pitch_giuseppe_genna.pdf" download class="festival-calendar-link">
+      <span class="btn-icon"><i class="bi bi-file-earmark-text"></i></span>
+      <span>Il pitch</span>
+    </a>
+<br>
+    <a href="https://www.nina.watch/rivista/pdf/Intelligenza_Autonoma_rivista.pdf" class="festival-calendar-link">
+      <span class="btn-icon"><i class="bi bi-file-earmark-text"></i></span>
+      <span>Prime idee di cornice e struttura</span>
+    </a>
+  </div>
+</div> 
 
   </div>
 
