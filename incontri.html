@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NINA – Eventi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
-
     /* ────────────────────────────────────────
        PAGE LAYOUT
     ──────────────────────────────────────── */
@@ -17,10 +19,12 @@
       background: var(--white);
       color: var(--black);
     }
-.nina-intro {
-  text-align: justify;
-  hyphens: auto;
-}
+
+    .nina-intro {
+      text-align: justify;
+      hyphens: auto;
+    }
+
     .page-header {
       margin-top: 48px;
       padding: 4rem 8vw 2rem;
@@ -51,7 +55,7 @@
       padding: 3rem 8vw;
     }
 
-    .section-block + .section-block {
+    .section-block+.section-block {
       border-top: 1px solid #ddd;
     }
 
@@ -105,19 +109,22 @@
     }
 
     .upcoming-card img {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       display: block;
       transition: transform 0.4s;
       filter: brightness(0.65);
     }
 
-    .upcoming-card:hover img { transform: scale(1.04); }
+    .upcoming-card:hover img {
+      transform: scale(1.04);
+    }
 
     .upcoming-card-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 60%);
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.1) 60%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -145,7 +152,7 @@
     .upcoming-card-meta {
       font-family: var(--font-mono);
       font-size: 0.6rem;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.6);
       line-height: 1.5;
     }
 
@@ -177,7 +184,8 @@
     }
 
     .past-card img {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       display: block;
       filter: grayscale(20%);
@@ -192,7 +200,7 @@
     .past-card-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 55%);
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 55%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -201,7 +209,9 @@
       transition: opacity 0.3s;
     }
 
-    .past-card:hover .past-card-overlay { opacity: 1; }
+    .past-card:hover .past-card-overlay {
+      opacity: 1;
+    }
 
     .past-card-title {
       font-family: var(--font-display);
@@ -214,7 +224,7 @@
     .past-card-date {
       font-family: var(--font-mono);
       font-size: 0.55rem;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.6);
       margin-top: 0.2rem;
     }
 
@@ -276,7 +286,8 @@
     }
 
     .stagione-card img {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       display: block;
       filter: brightness(0.55) grayscale(20%);
@@ -290,9 +301,11 @@
 
     .stagione-card-label {
       position: absolute;
-      bottom: 0; left: 0; right: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
       padding: 2rem;
-      background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 100%);
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
       text-align: center;
     }
 
@@ -308,7 +321,7 @@
     .stagione-desc {
       font-family: var(--font-mono);
       font-size: 0.65rem;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.6);
       letter-spacing: 0.1em;
       text-transform: uppercase;
       margin-top: 0.3rem;
@@ -361,9 +374,14 @@
       line-height: 1.45;
     }
 
-    .inviti-table tr:last-child td { border-bottom: none; }
+    .inviti-table tr:last-child td {
+      border-bottom: none;
+    }
 
-    .inviti-table td:first-child { font-weight: 500; }
+    .inviti-table td:first-child {
+      font-weight: 500;
+    }
+
     .inviti-table td:nth-child(3) {
       font-family: var(--font-mono);
       font-size: 0.75rem;
@@ -384,78 +402,97 @@
     footer p {
       font-family: var(--font-mono);
       font-size: 0.65rem;
-      color: rgba(255,255,255,0.35);
+      color: rgba(255, 255, 255, 0.35);
       letter-spacing: 0.1em;
       line-height: 2;
       text-transform: uppercase;
     }
 
     .past-slider {
-  position: relative;
-  overflow: hidden;
-  margin: 2rem 0;
-}
+      position: relative;
+      overflow: hidden;
+      margin: 2rem 0;
+    }
 
-.past-track {
-  display: flex;
-  gap: 1rem;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
+    .past-track {
+      display: flex;
+      gap: 1rem;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-.past-card {
-  flex: 0 0 calc(25% - 1rem);
-}
+    .past-card {
+      flex: 0 0 calc(25% - 1rem);
+    }
 
     /* ────────────────────────────────────────
        RESPONSIVE
     ──────────────────────────────────────── */
     @media (max-width: 900px) {
-      .past-grid { grid-template-columns: repeat(3, 1fr); }
-      .upcoming-card { flex: 0 0 calc(50% - 0.5rem); }
-      .stagioni-grid { grid-template-columns: 1fr; }
+      .past-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .upcoming-card {
+        flex: 0 0 calc(50% - 0.5rem);
+      }
+
+      .stagioni-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 600px) {
-      .past-grid { grid-template-columns: repeat(2, 1fr); }
-      .upcoming-card { flex: 0 0 calc(80% - 0.5rem); }
-      .inviti-table td:nth-child(2) { display: none; } /* hide "dove" on mobile */
+      .past-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .upcoming-card {
+        flex: 0 0 calc(80% - 0.5rem);
+      }
+
+      .inviti-table td:nth-child(2) {
+        display: none;
+      }
+
+      /* hide "dove" on mobile */
     }
   </style>
 </head>
+
 <body>
 
   <!-- NAV -->
-<nav>
+  <nav>
     <div class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-<ul class="nav-links">
-  <li class="logo"><a href="index.html">Nina</a></li>
-  <li class="spacer"></li>
-  <li class="dropdown"><a href="#">Chi siamo</a>
-    <ul class="submenu">
-      <li><a href="manifesto.html">Manifesto</a></li>
-      <!-- <li><a href="#">Miss/vis</a></li> -->
-      <li><a href="storia.html">Storia</a></li>
-      <li><a href="collaborazioni.html">Collaborazioni</a></li>
-      <li><a href="https://www.nina.watch/index_old.html#links" target="_blank">Archivio Link</a></li>
-      <li><a href="https://www.nina.watch/index_old.html#audio" target="_blank">Archivio Audio</a></li>
-    </ul>
-   </li>
-   <li class="dropdown">
-     <a href="cosa_facciamo.html">Cosa facciamo</a>
-    <ul class="submenu">
-      <li><a href="festival.html">Festival</a></li>
-      <li><a href="https://www.nina.watch/mostra-incomputabile/">Mostra</a></li>
-      <li><a href="sindacato.html">Sindacato</a></li>
-      <li><a href="rivista.html">Rivista</a></li>
-      <li><a href="incontri.html">Incontri</a></li>
-    </ul>
-    </li> 
-<li class="dropdown"><a href="partecipa.html">Partecipa</a>
-      <!--
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links">
+      <li class="logo"><a href="index.html">Nina</a></li>
+      <li class="spacer"></li>
+      <li class="dropdown"><a href="#">Chi siamo</a>
+        <ul class="submenu">
+          <li><a href="manifesto.html">Manifesto</a></li>
+          <!-- <li><a href="#">Miss/vis</a></li> -->
+          <li><a href="storia.html">Storia</a></li>
+          <li><a href="collaborazioni.html">Collaborazioni</a></li>
+          <li><a href="https://www.nina.watch/index_old.html#links" target="_blank">Archivio Link</a></li>
+          <li><a href="https://www.nina.watch/index_old.html#audio" target="_blank">Archivio Audio</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="cosa_facciamo.html">Cosa facciamo</a>
+        <ul class="submenu">
+          <li><a href="festival.html">Festival</a></li>
+          <li><a href="mostra_incomputabile.html">Mostra</a></li>
+          <li><a href="sindacato.html">Sindacato</a></li>
+          <li><a href="rivista.html">Rivista</a></li>
+          <li><a href="incontri.html">Incontri</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a href="partecipa.html">Partecipa</a>
+        <!--
     <ul class="submenu">
       <li><a href="#">Partecipa alle riunioni</a></li>
       <li><a href="#">Ospita un evento</a></li>
@@ -463,53 +500,87 @@
       <li><a href="#">Call aperte</a></li>
     </ul>
     -->
-  </li>
-  <li><a href="contattaci.html">Contatti</a></li>
-</ul>
+      </li>
+      <li><a href="contattaci.html">Contatti</a></li>
+    </ul>
 
-</nav>
+  </nav>
 
   <!-- PAGE HEADER -->
-<header class="page-header">
-  <h1>Ciclo di incontri</h1>
-  <p class="page-intro"style="text-align:justify;">
-Abbiamo organizzato due cicli di incontri <b>"Le conseguenze dell'AI"</b> che si è svolto a Milano tra febbraio 2024 e giugno 2024 e
-<b>"Le previsioni dei tempi"</b> tra Novembre 2024 e Maggio 2025.  </p>
+  <header class="page-header">
+    <h1>Ciclo di incontri</h1>
+    <p class="page-intro" style="text-align:justify;">
+      Abbiamo organizzato due cicli di incontri <b>"Le conseguenze dell'AI"</b> che si è svolto a Milano tra febbraio
+      2024 e giugno 2024 e
+      <b>"Le previsioni dei tempi"</b> tra Novembre 2024 e Maggio 2025.
+    </p>
 
-<section class="page-intro" style="text-align:justify;">
-  <br>
-  <p>
-    L’intelligenza artificiale generativa è un tema che è nel pieno dell’hype, ma viviamo con un certo disagio una buona parte dei toni giornalistici profetizzanti in cui si cerca di spiegare che tutto andrà per un certo verso piuttosto che un altro. È uno sviluppo tecnologico che per la prima volta ha <b>spaccato la comunità informatica e tecnologica</b>, polarizzata - semplificando - tra chi ne segnala i pericoli e chi dice che andrà tutto bene e ne usciremo migliori. L'AI rappresenta una <b>rottura tecnologica ed epistemologica</b> che prenderà pieghe in questo momento imprevedibili anche per chi ricopre ruoli di massimo livello nelle società che stanno sviluppando questi software.
-  </p>
-<br>
-  <p>
-    Con l’intelligenza artificiale generativa si è arrivati a un livello inedito nell'<b>accelerazione dell’automazione</b>: decifrarne le tendenze è uno sforzo necessario e richiede un’importante opera di intelligenza (umana) collettiva che deve essere attivata. Viviamo con un certo disagio la sensazione diffusa di <b>antropomorfizzazione della macchina</b> e il conseguente scaricabarile della responsabilità sull’uso del prodotto. Abbiamo un'opinione sulla letteratura che ha già dimostrato come gli<b> algoritmi generino discriminazioni</b> basati sul genere, la razza ed altri aspetti dell'identità (e ci chiediamo coerentemente perché queste storture non siano state corrette).
-  </p>
+    <section class="page-intro" style="text-align:justify;">
+      <br>
+      <p>
+        L’intelligenza artificiale generativa è un tema che è nel pieno dell’hype, ma viviamo con un certo disagio una
+        buona parte dei toni giornalistici profetizzanti in cui si cerca di spiegare che tutto andrà per un certo verso
+        piuttosto che un altro. È uno sviluppo tecnologico che per la prima volta ha <b>spaccato la comunità informatica
+          e tecnologica</b>, polarizzata - semplificando - tra chi ne segnala i pericoli e chi dice che andrà tutto bene
+        e ne usciremo migliori. L'AI rappresenta una <b>rottura tecnologica ed epistemologica</b> che prenderà pieghe in
+        questo momento imprevedibili anche per chi ricopre ruoli di massimo livello nelle società che stanno sviluppando
+        questi software.
+      </p>
+      <br>
+      <p>
+        Con l’intelligenza artificiale generativa si è arrivati a un livello inedito nell'<b>accelerazione
+          dell’automazione</b>: decifrarne le tendenze è uno sforzo necessario e richiede un’importante opera di
+        intelligenza (umana) collettiva che deve essere attivata. Viviamo con un certo disagio la sensazione diffusa di
+        <b>antropomorfizzazione della macchina</b> e il conseguente scaricabarile della responsabilità sull’uso del
+        prodotto. Abbiamo un'opinione sulla letteratura che ha già dimostrato come gli<b> algoritmi generino
+          discriminazioni</b> basati sul genere, la razza ed altri aspetti dell'identità (e ci chiediamo coerentemente
+        perché queste storture non siano state corrette).
+      </p>
 
-  <p>
-    Resta soprattutto che una serie di temi e di rivendicazioni storiche diventano più delicate e contradditorie. Ad esempio il tema della violazione del copyright e dell’accusa (che ad esempio fa Noam Chomsky) dell’AI come “software di plagio” forse non è più sufficiente quando ormai è l’intera produzione immateriale a essere un grande data set da cui estrarre (o sottrarre) valore. Un altro tema delicato è quello della <b>distribuzione della tecnologia</b>: se da un lato è sulla carta auspicabile ‐ oltre che essere una forma di attacco ai monopoli ‐ immaginare uno spostamento di questa innovazione dall’elitarismo alla diffusione, dall’altro questo può implicare grossi problemi etici sui possibili utilizzi.
-  </p>
+      <p>
+        Resta soprattutto che una serie di temi e di rivendicazioni storiche diventano più delicate e contradditorie. Ad
+        esempio il tema della violazione del copyright e dell’accusa (che ad esempio fa Noam Chomsky) dell’AI come
+        “software di plagio” forse non è più sufficiente quando ormai è l’intera produzione immateriale a essere un
+        grande data set da cui estrarre (o sottrarre) valore. Un altro tema delicato è quello della <b>distribuzione
+          della tecnologia</b>: se da un lato è sulla carta auspicabile ‐ oltre che essere una forma di attacco ai
+        monopoli ‐ immaginare uno spostamento di questa innovazione dall’elitarismo alla diffusione, dall’altro questo
+        può implicare grossi problemi etici sui possibili utilizzi.
+      </p>
 
-  <p>
-    Infine, un tema da non sottovalutare riguarda la diffusione delle fake news e il ruolo dei social, in particolare foto e video generati con l'AI, nonché gli effetti che possono avere in termini di produzione del consenso e orientamento dell'opinione pubblica. Tutte circostanze che ci portano a riflettere sui risvolti epistemologici dell'AI in epoca di post-verità e sui rischi per le democrazie.
-  </p>
+      <p>
+        Infine, un tema da non sottovalutare riguarda la diffusione delle fake news e il ruolo dei social, in
+        particolare foto e video generati con l'AI, nonché gli effetti che possono avere in termini di produzione del
+        consenso e orientamento dell'opinione pubblica. Tutte circostanze che ci portano a riflettere sui risvolti
+        epistemologici dell'AI in epoca di post-verità e sui rischi per le democrazie.
+      </p>
 
-  <p>
-    Quanto ai riflessi sul lavoro, non è facile capirne la portata dell’impatto: è probabile che colpirà di più il lavoro immateriale, è probabile che l’aumento di produttività genererà grossi profitti. Tutte le altre innovazioni tecnologiche (dall’aratro all'elettricità, dalla ruota alla robotica) quanto meno sul breve termine sono sempre state a discapito dei lavori non qualificati. Questa volta invece l'innovazione potrebbe impattare su una fascia di forza lavoro di formazione medio-alta: fatto che rappresenta una novità assoluta dalle imprevedibili conseguenze sociali.
-  </p>
+      <p>
+        Quanto ai riflessi sul lavoro, non è facile capirne la portata dell’impatto: è probabile che colpirà di più il
+        lavoro immateriale, è probabile che l’aumento di produttività genererà grossi profitti. Tutte le altre
+        innovazioni tecnologiche (dall’aratro all'elettricità, dalla ruota alla robotica) quanto meno sul breve termine
+        sono sempre state a discapito dei lavori non qualificati. Questa volta invece l'innovazione potrebbe impattare
+        su una fascia di forza lavoro di formazione medio-alta: fatto che rappresenta una novità assoluta dalle
+        imprevedibili conseguenze sociali.
+      </p>
 
-  <p>
-    Contemporaneamente inizia a diffondersi una discreta quantità di scritti che dimostrano come questa trasformazione tecnologica sia enormemente energivora e non sappiamo, nella previsione della sua probabile diffusione, dove si attingerà per fare fronte a questo fabbisogno.
-  </p>
+      <p>
+        Contemporaneamente inizia a diffondersi una discreta quantità di scritti che dimostrano come questa
+        trasformazione tecnologica sia enormemente energivora e non sappiamo, nella previsione della sua probabile
+        diffusione, dove si attingerà per fare fronte a questo fabbisogno.
+      </p>
 
-  <p>
-    Anche se probabilmente l'entusiasmo attorno all'AI sbiadirà, anche se ci saranno battute d’arresto dovute a limitazioni, leggi, errori o quant’altro, la strada presa con lo sviluppo di questo progresso tecnologico ci sembra difficile da invertire e in ogni caso cambierà il mondo digitale (e non solo) con conseguenze, come la liberazione di tempo dal lavoro, che suggeriscono ripensamenti radicali e in senso re-distributivo dell’uso di patrimoni che dovrebbero essere comuni.
-  </p>
-</section>
-</header>
+      <p>
+        Anche se probabilmente l'entusiasmo attorno all'AI sbiadirà, anche se ci saranno battute d’arresto dovute a
+        limitazioni, leggi, errori o quant’altro, la strada presa con lo sviluppo di questo progresso tecnologico ci
+        sembra difficile da invertire e in ogni caso cambierà il mondo digitale (e non solo) con conseguenze, come la
+        liberazione di tempo dal lavoro, che suggeriscono ripensamenti radicali e in senso re-distributivo dell’uso di
+        patrimoni che dovrebbero essere comuni.
+      </p>
+    </section>
+  </header>
 
 
-</section>
+  </section>
   <!-- ── STAGIONE IN CORSO ── -->
   <section class="section-block">
     <h2>Stagione in corso</h2>
@@ -560,7 +631,7 @@ Abbiamo organizzato due cicli di incontri <b>"Le conseguenze dell'AI"</b> che si
         </a>
 
         <!-- placeholder 5 -->
-         <!--
+        <!--
         <a href="#" class="upcoming-card">
           <img src="https://picsum.photos/300/400?random=23" alt="Incontro">
           <div class="upcoming-card-overlay">
@@ -580,132 +651,132 @@ Abbiamo organizzato due cicli di incontri <b>"Le conseguenze dell'AI"</b> che si
     </div>
 
     <!-- Incontri passati della stagione corrente -->
-<span class="subsection-label" style="margin-top:2.5rem;">Incontri passati</span>
+    <span class="subsection-label" style="margin-top:2.5rem;">Incontri passati</span>
 
-<!-- Slider Past -->
-<div class="past-slider">
-  <div class="past-track" id="pastTrack">
-
-    <a href="#" class="past-card">
-      <img src="https://www.nina.watch/img/slider/nina_0.jpeg" alt="">
-      <div class="past-card-overlay">
-        <p class="past-card-title">CapirAI – Come siamo arrivati all'AI generativa?</p>
-        <p class="past-card-date">20 Feb 2024</p>
-      </div>
-    </a>
-
-    <a href="#" class="past-card">
-      <img src="https://www.nina.watch/img/slider/nina_1.jpeg" alt="">
-      <div class="past-card-overlay">
-        <p class="past-card-title">LavorAI – L'AI e il futuro del lavoro</p>
-        <p class="past-card-date">28 Feb 2024</p>
-      </div>
-    </a>
-
-    <a href="#" class="past-card">
-      <img src="https://www.nina.watch/img/slider/nina_2.jpeg" alt="">
-      <div class="past-card-overlay">
-        <p class="past-card-title">ConsumAI – Quanta energia consuma l'AI?</p>
-        <p class="past-card-date">12 Mar 2024</p>
-      </div>
-    </a>
-
-    <a href="#" class="past-card">
-      <img src="https://www.nina.watch/img/slider/nina_3.jpeg" alt="">
-      <div class="past-card-overlay">
-        <p class="past-card-title">DiscriminAI – Quali dati alimentano l'AI?</p>
-        <p class="past-card-date">26 Mar 2024</p>
-      </div>
-    </a>
-
-    <a href="#" class="past-card">
-      <img src="https://www.nina.watch/img/slider/nina_4.jpeg" alt="">
-      <div class="past-card-overlay">
-        <p class="past-card-title">CreAI – Cosa possiamo fare collettivamente?</p>
-        <p class="past-card-date">13 Apr 2024</p>
-      </div>
-    </a>
-
-    <a href="#" class="past-card">
-      <img src="https://www.nina.watch/img/nina_18_6.jpg" alt="">
-      <div class="past-card-overlay">
-        <p class="past-card-title">La guerra e l'AI il paradigma della Palestina</p>
-        <p class="past-card-date">18 Giu 2024</p>
-      </div>
-    </a>
-
-    <a href="#" class="past-card">
-      <img src="https://www.nina.watch/img/nina-fake-news.jpg" alt="">
-      <div class="past-card-overlay">
-        <p class="past-card-title">Fake news ai tempi dell'AI</p>
-        <p class="past-card-date">23 Ott 2024</p>
-      </div>
-    </a>
-
-    <a href="#" class="past-card">
-      <img src="https://www.nina.watch/img/les-mots.jpg" alt="">
-      <div class="past-card-overlay">
-        <p class="past-card-title">Presentazione di Incomputabile di Alexander Galloway</p>
-        <p class="past-card-date">21 Nov 2024</p>
-      </div>
-    </a>
+    <!-- Slider Past -->
+    <div class="past-slider">
+      <div class="past-track" id="pastTrack">
 
         <a href="#" class="past-card">
-      <img src="https://www.nina.watch/img/arche.jpg" alt="">
-      <div class="past-card-overlay">
-        <p class="past-card-title">L'AI applicata al lavoro educativo</p>
-        <p class="past-card-date">28 Gen 2025</p>
-      </div>
-    </a>
+          <img src="https://www.nina.watch/img/slider/nina_0.jpeg" alt="">
+          <div class="past-card-overlay">
+            <p class="past-card-title">CapirAI – Come siamo arrivati all'AI generativa?</p>
+            <p class="past-card-date">20 Feb 2024</p>
+          </div>
+        </a>
 
         <a href="#" class="past-card">
-      <img src="https://www.nina.watch/img/volume.jpg" alt="">
-      <div class="past-card-overlay">
-        <p class="past-card-title">Esiste un AI senza bias?</p>
-        <p class="past-card-date">25 Feb 2025</p>
-      </div>
-    </a>
+          <img src="https://www.nina.watch/img/slider/nina_1.jpeg" alt="">
+          <div class="past-card-overlay">
+            <p class="past-card-title">LavorAI – L'AI e il futuro del lavoro</p>
+            <p class="past-card-date">28 Feb 2024</p>
+          </div>
+        </a>
 
         <a href="#" class="past-card">
-      <img src="https://www.nina.watch/img/cory_doctorow.jpeg" alt="">
-      <div class="past-card-overlay">
-        <p class="past-card-title">Come distruggere il capitalismo della sorveglianza</p>
-        <p class="past-card-date">12 Mar 2025</p>
-      </div>
-    </a>
+          <img src="https://www.nina.watch/img/slider/nina_2.jpeg" alt="">
+          <div class="past-card-overlay">
+            <p class="past-card-title">ConsumAI – Quanta energia consuma l'AI?</p>
+            <p class="past-card-date">12 Mar 2024</p>
+          </div>
+        </a>
 
         <a href="#" class="past-card">
-      <img src="https://www.nina.watch/img/consumai_2.jpeg" alt="">
-      <div class="past-card-overlay">
-        <p class="past-card-title">Quale rapporto tra sviluppo dell'intelligenza artificiale, energia e clima?</p>
-        <p class="past-card-date">25 Mar 2025</p>
-      </div>
-    </a>
+          <img src="https://www.nina.watch/img/slider/nina_3.jpeg" alt="">
+          <div class="past-card-overlay">
+            <p class="past-card-title">DiscriminAI – Quali dati alimentano l'AI?</p>
+            <p class="past-card-date">26 Mar 2024</p>
+          </div>
+        </a>
 
         <a href="#" class="past-card">
-      <img src="https://www.nina.watch/img/FESTIVAL_2025.jpg" alt="">
-      <div class="past-card-overlay">
-        <p class="past-card-title">Nina festival</p>
-        <p class="past-card-date">9-10 Mag 2025</p>
-      </div>
-    </a>
+          <img src="https://www.nina.watch/img/slider/nina_4.jpeg" alt="">
+          <div class="past-card-overlay">
+            <p class="past-card-title">CreAI – Cosa possiamo fare collettivamente?</p>
+            <p class="past-card-date">13 Apr 2024</p>
+          </div>
+        </a>
 
         <a href="#" class="past-card">
-      <img src="https://www.nina.watch/img/salute.jpg" alt="">
-      <div class="past-card-overlay">
-        <p class="past-card-title">Quando il diritto alla salute incontra gli algoritmi</p>
-        <p class="past-card-date">20 Mag 2025</p>
+          <img src="https://www.nina.watch/img/nina_18_6.jpg" alt="">
+          <div class="past-card-overlay">
+            <p class="past-card-title">La guerra e l'AI il paradigma della Palestina</p>
+            <p class="past-card-date">18 Giu 2024</p>
+          </div>
+        </a>
+
+        <a href="#" class="past-card">
+          <img src="https://www.nina.watch/img/nina-fake-news.jpg" alt="">
+          <div class="past-card-overlay">
+            <p class="past-card-title">Fake news ai tempi dell'AI</p>
+            <p class="past-card-date">23 Ott 2024</p>
+          </div>
+        </a>
+
+        <a href="#" class="past-card">
+          <img src="https://www.nina.watch/img/les-mots.jpg" alt="">
+          <div class="past-card-overlay">
+            <p class="past-card-title">Presentazione di Incomputabile di Alexander Galloway</p>
+            <p class="past-card-date">21 Nov 2024</p>
+          </div>
+        </a>
+
+        <a href="#" class="past-card">
+          <img src="https://www.nina.watch/img/arche.jpg" alt="">
+          <div class="past-card-overlay">
+            <p class="past-card-title">L'AI applicata al lavoro educativo</p>
+            <p class="past-card-date">28 Gen 2025</p>
+          </div>
+        </a>
+
+        <a href="#" class="past-card">
+          <img src="https://www.nina.watch/img/volume.jpg" alt="">
+          <div class="past-card-overlay">
+            <p class="past-card-title">Esiste un AI senza bias?</p>
+            <p class="past-card-date">25 Feb 2025</p>
+          </div>
+        </a>
+
+        <a href="#" class="past-card">
+          <img src="https://www.nina.watch/img/cory_doctorow.jpeg" alt="">
+          <div class="past-card-overlay">
+            <p class="past-card-title">Come distruggere il capitalismo della sorveglianza</p>
+            <p class="past-card-date">12 Mar 2025</p>
+          </div>
+        </a>
+
+        <a href="#" class="past-card">
+          <img src="https://www.nina.watch/img/consumai_2.jpeg" alt="">
+          <div class="past-card-overlay">
+            <p class="past-card-title">Quale rapporto tra sviluppo dell'intelligenza artificiale, energia e clima?</p>
+            <p class="past-card-date">25 Mar 2025</p>
+          </div>
+        </a>
+
+        <a href="#" class="past-card">
+          <img src="https://www.nina.watch/img/FESTIVAL_2025.jpg" alt="">
+          <div class="past-card-overlay">
+            <p class="past-card-title">Nina festival</p>
+            <p class="past-card-date">9-10 Mag 2025</p>
+          </div>
+        </a>
+
+        <a href="#" class="past-card">
+          <img src="https://www.nina.watch/img/salute.jpg" alt="">
+          <div class="past-card-overlay">
+            <p class="past-card-title">Quando il diritto alla salute incontra gli algoritmi</p>
+            <p class="past-card-date">20 Mag 2025</p>
+          </div>
+        </a>
+
       </div>
-    </a>
+    </div>
 
-  </div>
-</div>
-
-<div class="slider-dots-row" id="pastDots">
-  <button class="dot active" onclick="pastSlide(0)"></button>
-  <button class="dot" onclick="pastSlide(1)"></button>
-  <button class="dot" onclick="pastSlide(2)"></button>
-</div>
+    <div class="slider-dots-row" id="pastDots">
+      <button class="dot active" onclick="pastSlide(0)"></button>
+      <button class="dot" onclick="pastSlide(1)"></button>
+      <button class="dot" onclick="pastSlide(2)"></button>
+    </div>
   </section>
 
   <!-- ── STAGIONI PASSATE ── -->
@@ -854,48 +925,49 @@ Abbiamo organizzato due cicli di incontri <b>"Le conseguenze dell'AI"</b> che si
     <p>N.I.N.A APS<br>C.F. 98021140151<br>Via Belgirate, 15 Milano<br>Copyright 2026</p>
   </footer>
 
-<script>
-  // ── Past slider ──────────────────────
-  const pastTrack = document.getElementById('pastTrack');
-  const pastDots = document.querySelectorAll('#pastDots .dot');
-
-  const pastCardWidth = () => pastTrack.children[0].offsetWidth + 16; 
-  let pastCurrent = 0;
-
-  const pastVisible = () =>
-    window.innerWidth < 600 ? 1 :
-    window.innerWidth < 900 ? 2 : 4;
-
-  function pastSlide(n) {
-    pastCurrent = n;
-    pastTrack.style.transform =
-      `translateX(-${n * pastCardWidth() * pastVisible()}px)`;
-
-    pastDots.forEach((d, i) => d.classList.toggle('active', i === n));
-  }
-
-  window.pastSlide = pastSlide;
-
-  // Auto-advance
-  setInterval(() => {
-    const next = (pastCurrent + 1) % pastDots.length;
-    pastSlide(next);
-  }, 4500);
-</script>
   <script>
-document.querySelector(".hamburger").addEventListener("click", () => {
-  document.querySelector(".nav-links").classList.toggle("open");
-});
+    // ── Past slider ──────────────────────
+    const pastTrack = document.getElementById('pastTrack');
+    const pastDots = document.querySelectorAll('#pastDots .dot');
 
-// Apri i dropdown su mobile con il tocco
-document.querySelectorAll(".dropdown > a").forEach(link => {
-  link.addEventListener("click", (e) => {
-    if (window.innerWidth <= 1024) {
-      e.preventDefault();
-      link.parentElement.classList.toggle("open");
+    const pastCardWidth = () => pastTrack.children[0].offsetWidth + 16;
+    let pastCurrent = 0;
+
+    const pastVisible = () =>
+      window.innerWidth < 600 ? 1 :
+        window.innerWidth < 900 ? 2 : 4;
+
+    function pastSlide(n) {
+      pastCurrent = n;
+      pastTrack.style.transform =
+        `translateX(-${n * pastCardWidth() * pastVisible()}px)`;
+
+      pastDots.forEach((d, i) => d.classList.toggle('active', i === n));
     }
-  });
-});
-</script>
+
+    window.pastSlide = pastSlide;
+
+    // Auto-advance
+    setInterval(() => {
+      const next = (pastCurrent + 1) % pastDots.length;
+      pastSlide(next);
+    }, 4500);
+  </script>
+  <script>
+    document.querySelector(".hamburger").addEventListener("click", () => {
+      document.querySelector(".nav-links").classList.toggle("open");
+    });
+
+    // Apri i dropdown su mobile con il tocco
+    document.querySelectorAll(".dropdown > a").forEach(link => {
+      link.addEventListener("click", (e) => {
+        if (window.innerWidth <= 1024) {
+          e.preventDefault();
+          link.parentElement.classList.toggle("open");
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>

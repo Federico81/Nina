@@ -1,23 +1,48 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NINA – Rivista</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    :root { --page-color: #ff2d6b; --page-text: var(--white); }
+    :root {
+      --page-color: #ff2d6b;
+      --page-text: var(--white);
+    }
 
-    body { background: var(--page-color); color: var(--page-text); min-height: 100vh; }
+    body {
+      background: var(--page-color);
+      color: var(--page-text);
+      min-height: 100vh;
+    }
 
-    nav { background: var(--black); border-bottom: 1px solid rgba(0,0,0,0.12); }
-    .nav-logo { color: var(--white); }
-    .nav-links a { color: var(--white); }
-    .nav-links a:hover, .nav-links a.active { color: var(--lime); text-decoration: underline; text-underline-offset: 4px; }
+    nav {
+      background: var(--black);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .nav-logo {
+      color: var(--white);
+    }
+
+    .nav-links a {
+      color: var(--white);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--lime);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
 
     /* ── LAYOUT ── */
     .page-wrap {
@@ -31,8 +56,14 @@
     }
 
     /* Col left spans all rows */
-    .col-left { grid-column: 1; }
-    .col-right { grid-column: 2; padding-top: 0.2rem; }
+    .col-left {
+      grid-column: 1;
+    }
+
+    .col-right {
+      grid-column: 2;
+      padding-top: 0.2rem;
+    }
 
     h1 {
       font-family: var(--font-display);
@@ -53,7 +84,9 @@
       margin-bottom: 2.5rem;
     }
 
-    .launch-date strong { font-weight: 500; }
+    .launch-date strong {
+      font-weight: 500;
+    }
 
     .scarica {
       font-family: var(--font-display);
@@ -69,7 +102,9 @@
       transition: opacity 0.2s;
     }
 
-    .scarica:hover { opacity: 0.6; }
+    .scarica:hover {
+      opacity: 0.6;
+    }
 
     .lead {
       font-family: var(--font-display);
@@ -96,7 +131,10 @@
       margin-bottom: 1rem;
     }
 
-    .body-text + .body-text { margin-top: 0; color: var(--white); }
+    .body-text+.body-text {
+      margin-top: 0;
+      color: var(--white);
+    }
 
     ul.actions-list {
       margin: 0.5rem 0 1rem 0;
@@ -124,7 +162,8 @@
       color: var(--white);
     }
 
-    .body-text a, ul.actions-list a {
+    .body-text a,
+    ul.actions-list a {
       color: inherit;
       text-decoration: underline;
       text-underline-offset: 3px;
@@ -140,22 +179,33 @@
     footer p {
       font-family: var(--font-mono);
       font-size: 0.65rem;
-      color: rgba(255,255,255,0.35);
+      color: rgba(255, 255, 255, 0.35);
       letter-spacing: 0.1em;
       line-height: 2;
       text-transform: uppercase;
     }
 
     @media (max-width: 768px) {
-      .page-wrap { grid-template-columns: 1fr; }
-      .col-right { margin-top: 0; }
-      h1 { grid-column: 1; }
+      .page-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .col-right {
+        margin-top: 0;
+      }
+
+      h1 {
+        grid-column: 1;
+      }
     }
 
-    .label{
-      border-bottom: none;}
+    .label {
+      border-bottom: none;
+    }
 
-    .spacer { height: 1.5rem; }
+    .spacer {
+      height: 1.5rem;
+    }
 
     /* ── FOOTER ── */
     footer {
@@ -167,52 +217,61 @@
     footer p {
       font-family: var(--font-mono);
       font-size: 0.65rem;
-      color: rgba(255,255,255,0.35);
+      color: rgba(255, 255, 255, 0.35);
       letter-spacing: 0.1em;
       line-height: 2;
       text-transform: uppercase;
     }
 
     @media (max-width: 768px) {
-      .page-wrap { grid-template-columns: 1fr; }
-      .col-right { margin-top: 0; }
-      h1 { grid-column: 1; }
+      .page-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .col-right {
+        margin-top: 0;
+      }
+
+      h1 {
+        grid-column: 1;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<nav>
+  <nav>
     <div class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-<ul class="nav-links">
-  <li class="logo"><a href="index.html">Nina</a></li>
-  <li class="spacer"></li>
-  <li class="dropdown"><a href="#">Chi siamo</a>
-    <ul class="submenu">
-      <li><a href="manifesto.html">Manifesto</a></li>
-      <!-- <li><a href="#">Miss/vis</a></li> -->
-      <li><a href="storia.html">Storia</a></li>
-      <li><a href="collaborazioni.html">Collaborazioni</a></li>
-      <li><a href="https://www.nina.watch/index_old.html#links" target="_blank">Archivio Link</a></li>
-      <li><a href="https://www.nina.watch/index_old.html#audio" target="_blank">Archivio Audio</a></li>
-    </ul>
-   </li>
-   <li class="dropdown">
-     <a href="cosa_facciamo.html">Cosa facciamo</a>
-    <ul class="submenu">
-      <li><a href="festival.html">Festival</a></li>
-      <li><a href="https://www.nina.watch/mostra-incomputabile/">Mostra</a></li>
-      <li><a href="sindacato.html">Sindacato</a></li>
-      <li><a href="rivista.html">Rivista</a></li>
-      <li><a href="incontri.html">Incontri</a></li>
-    </ul>
-    </li> 
-<li class="dropdown"><a href="partecipa.html">Partecipa</a>
-      <!--
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links">
+      <li class="logo"><a href="index.html">Nina</a></li>
+      <li class="spacer"></li>
+      <li class="dropdown"><a href="#">Chi siamo</a>
+        <ul class="submenu">
+          <li><a href="manifesto.html">Manifesto</a></li>
+          <!-- <li><a href="#">Miss/vis</a></li> -->
+          <li><a href="storia.html">Storia</a></li>
+          <li><a href="collaborazioni.html">Collaborazioni</a></li>
+          <li><a href="https://www.nina.watch/index_old.html#links" target="_blank">Archivio Link</a></li>
+          <li><a href="https://www.nina.watch/index_old.html#audio" target="_blank">Archivio Audio</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="cosa_facciamo.html">Cosa facciamo</a>
+        <ul class="submenu">
+          <li><a href="festival.html">Festival</a></li>
+          <li><a href="mostra_incomputabile.html">Mostra</a></li>
+          <li><a href="sindacato.html">Sindacato</a></li>
+          <li><a href="rivista.html">Rivista</a></li>
+          <li><a href="incontri.html">Incontri</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a href="partecipa.html">Partecipa</a>
+        <!--
     <ul class="submenu">
       <li><a href="#">Partecipa alle riunioni</a></li>
       <li><a href="#">Ospita un evento</a></li>
@@ -220,54 +279,70 @@
       <li><a href="#">Call aperte</a></li>
     </ul>
     -->
-  </li>
-  <li><a href="contattaci.html">Contatti</a></li>
+      </li>
+      <li><a href="contattaci.html">Contatti</a></li>
 
-</ul>
+    </ul>
 
-</nav>
+  </nav>
 
   <div class="page-wrap">
 
     <h1>Rivista</h1>
 
     <div class="col-left">
-      <p class="launch-date"><em>Presentazione e Lancio: <br><strong>9 maggio 2026 - Roma</strong></em><br><strong>10 maggio 2026 - Milano</strong></em></p>
+      <p class="launch-date"><em>Presentazione e Lancio: <br><strong>9 maggio 2026 - Roma</strong></em><br><strong>10
+          maggio 2026 - Milano</strong></em></p>
 
-      <p class="lead">Perché fare una rivista, un manuale di autodifesa e contrattacco digitale nel 2025? Perché abbiamo bisogno di sgrossare il dizionario di fronte a una tecnologia che corre velocissima.</p>
+      <p class="lead">Perché fare una rivista, un manuale di autodifesa e contrattacco digitale nel 2025? Perché abbiamo
+        bisogno di sgrossare il dizionario di fronte a una tecnologia che corre velocissima.</p>
 
-      <p class="body-text">Di nuovo "Il mondo era così recente, che molte cose erano prive di nome, e per citarle bisognava indicarle col dito". Perché siamo stanchi delle iniziative bellissime, ma che finiscono per essere monumenti al lamento e al vittimismo. Perché abbiamo un bisogno di natura teorica di relazionarci a un network internazionale di idee, ma soprattutto di pratiche diffusive, autonome, riproducibili, costruttive.</p>
+      <p class="body-text">Di nuovo "Il mondo era così recente, che molte cose erano prive di nome, e per citarle
+        bisognava indicarle col dito". Perché siamo stanchi delle iniziative bellissime, ma che finiscono per essere
+        monumenti al lamento e al vittimismo. Perché abbiamo un bisogno di natura teorica di relazionarci a un network
+        internazionale di idee, ma soprattutto di pratiche diffusive, autonome, riproducibili, costruttive.</p>
 
-      <p class="body-text">Perché c'è un lavoro ricorsivo da costruire che risponde alle sollecitazioni degli sviluppi della società digitale. L'epoca macchinica richiede una nuova domanda filosofica, nei mesi della caduta del vero e della fine del principio di non contraddizione, l'intelligenza artificiale innesca un processo di proiezione con ricadute su vita reale. Nella ri/vista si rapprende un'altra idea del mondo.</p>
+      <p class="body-text">Perché c'è un lavoro ricorsivo da costruire che risponde alle sollecitazioni degli sviluppi
+        della società digitale. L'epoca macchinica richiede una nuova domanda filosofica, nei mesi della caduta del vero
+        e della fine del principio di non contraddizione, l'intelligenza artificiale innesca un processo di proiezione
+        con ricadute su vita reale. Nella ri/vista si rapprende un'altra idea del mondo.</p>
 
       <div class="spacer"></div>
 
-      <p class="body-text">Non ha nessun senso fare una rivista per scriverci noi o compiacerci, facciamo una ri/vista perché abbiamo un'altra idea di mondo. Facciamo una ri/vista per generare relazioni e nuovo lessico soprattutto per dare una cornice teorica alle pratiche che vorremo diffondere e misurare nei loro impatti.</p>
+      <p class="body-text">Non ha nessun senso fare una rivista per scriverci noi o compiacerci, facciamo una ri/vista
+        perché abbiamo un'altra idea di mondo. Facciamo una ri/vista per generare relazioni e nuovo lessico soprattutto
+        per dare una cornice teorica alle pratiche che vorremo diffondere e misurare nei loro impatti.</p>
 
-      <p class="body-text">Questa cosa in discreta parte si qualifica con lo stesso percorso che abbiamo individuato per il <a href="sindacato.html">sindacato universale</a> (identificare degli obiettivi/persone sfruttate dall'algoritmo, approfondire le logiche, diffondere consapevolezza, misurare l'impatto delle risposte collettive e come obiettivo finale migrare e ridurre la dipendenza dalle big tech). Le azioni, le pratiche del sindacato sono gli snodi delle nostre battaglie, mosse armoniche nel sentimento dei tempi.</p>
+      <p class="body-text">Questa cosa in discreta parte si qualifica con lo stesso percorso che abbiamo individuato per
+        il <a href="sindacato.html">sindacato universale</a> (identificare degli obiettivi/persone sfruttate
+        dall'algoritmo, approfondire le logiche, diffondere consapevolezza, misurare l'impatto delle risposte collettive
+        e come obiettivo finale migrare e ridurre la dipendenza dalle big tech). Le azioni, le pratiche del sindacato
+        sono gli snodi delle nostre battaglie, mosse armoniche nel sentimento dei tempi.</p>
 
-      <p class="body-text">Le proposte che vediamo ci sembrano parziali perché non si pongono il problema dei meccanismi che sottendono l'estrazione dei dati. Alla produzione di dopamina dobbiamo rispondere con la relazione reale che è intelligenza autonoma di specie.</p>
+      <p class="body-text">Le proposte che vediamo ci sembrano parziali perché non si pongono il problema dei meccanismi
+        che sottendono l'estrazione dei dati. Alla produzione di dopamina dobbiamo rispondere con la relazione reale che
+        è intelligenza autonoma di specie.</p>
     </div>
 
     <!-- <div class="col-right">
       <a href="#" target="_blank" class="scarica">Scarica i Materiali</a><br>
       <a href="https://www.nina.watch/rivista/pdf/pitch_giuseppe_genna.pdf" target="_blank" class="scarica">Il pitch →</a><br>
       <a href="https://www.nina.watch/rivista/pdf/Intelligenza_Autonoma_rivista.pdf" target="_blank" class="scarica">Prime idee di cornice e struttura →</a>
-    </div> --> 
+    </div> -->
 
     <div class="label">Materiali </p>
-  <div class="d-flex flex-wrap gap-3 mt-3">
-    <a href="ttps://www.nina.watch/rivista/pdf/pitch_giuseppe_genna.pdf" download class="festival-calendar-link">
-      <span class="btn-icon"><i class="bi bi-file-earmark-text"></i></span>
-      <span>Il pitch</span>
-    </a>
-<br>
-    <a href="https://www.nina.watch/rivista/pdf/Intelligenza_Autonoma_rivista.pdf" class="festival-calendar-link">
-      <span class="btn-icon"><i class="bi bi-file-earmark-text"></i></span>
-      <span>Prime idee di cornice e struttura</span>
-    </a>
-  </div>
-</div> 
+      <div class="d-flex flex-wrap gap-3 mt-3">
+        <a href="https://www.nina.watch/rivista/pdf/pitch_giuseppe_genna.pdf" download class="festival-calendar-link">
+          <span class="btn-icon"><i class="bi bi-file-earmark-text"></i></span>
+          <span>Il pitch</span>
+        </a>
+        <br>
+        <a href="https://www.nina.watch/rivista/pdf/Intelligenza_Autonoma_rivista.pdf" class="festival-calendar-link">
+          <span class="btn-icon"><i class="bi bi-file-earmark-text"></i></span>
+          <span>Prime idee di cornice e struttura</span>
+        </a>
+      </div>
+    </div>
 
   </div>
 
@@ -275,19 +350,20 @@
     <p>N.I.N.A APS<br>C.F. 98021140151<br>Via Belgirate, 15 Milano<br>Copyright 2026</p>
   </footer>
   <script>
-document.querySelector(".hamburger").addEventListener("click", () => {
-  document.querySelector(".nav-links").classList.toggle("open");
-});
+    document.querySelector(".hamburger").addEventListener("click", () => {
+      document.querySelector(".nav-links").classList.toggle("open");
+    });
 
-// Apri i dropdown su mobile con il tocco
-document.querySelectorAll(".dropdown > a").forEach(link => {
-  link.addEventListener("click", (e) => {
-    if (window.innerWidth <= 1024) {
-      e.preventDefault();
-      link.parentElement.classList.toggle("open");
-    }
-  });
-});
-</script>
+    // Apri i dropdown su mobile con il tocco
+    document.querySelectorAll(".dropdown > a").forEach(link => {
+      link.addEventListener("click", (e) => {
+        if (window.innerWidth <= 1024) {
+          e.preventDefault();
+          link.parentElement.classList.toggle("open");
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>

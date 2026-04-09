@@ -1,24 +1,52 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NINA – Sindacato</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    :root { --page-color: #b48cff; --page-text: #fffefe; --lime: #c8f500;}
+    :root {
+      --page-color: #b48cff;
+      --page-text: #fffefe;
+      --lime: #c8f500;
+    }
 
-    body { background: var(--page-color); color: var(--page-text); min-height: 100vh; }
+    body {
+      background: var(--page-color);
+      color: var(--page-text);
+      min-height: 100vh;
+    }
 
-    nav { background: var(--black); border-bottom: 1px solid rgba(0,0,0,0.12); }
-    .nav-logo { color: var(--white); }
-    .nav-links a { color: var(--white); }
-    .nav-links a:hover, .nav-links a.active { color: var(--lime); text-decoration: underline; text-underline-offset: 4px; }
+    nav {
+      background: var(--black);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .nav-logo {
+      color: var(--white);
+    }
+
+    .nav-links a {
+      color: var(--white);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--lime);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
 
     /* ── LAYOUT ── */
     .page-wrap {
@@ -32,8 +60,14 @@
     }
 
     /* Col left spans all rows */
-    .col-left { grid-column: 1; }
-    .col-right { grid-column: 2; padding-top: 0.2rem; }
+    .col-left {
+      grid-column: 1;
+    }
+
+    .col-right {
+      grid-column: 2;
+      padding-top: 0.2rem;
+    }
 
     h1 {
       font-family: var(--font-display);
@@ -54,7 +88,9 @@
       margin-bottom: 2.5rem;
     }
 
-    .launch-date strong { font-weight: 500; }
+    .launch-date strong {
+      font-weight: 500;
+    }
 
     .scarica {
       font-family: var(--font-display);
@@ -70,7 +106,9 @@
       transition: opacity 0.2s;
     }
 
-    .scarica:hover { opacity: 0.6; }
+    .scarica:hover {
+      opacity: 0.6;
+    }
 
     .lead {
       font-family: var(--font-display);
@@ -97,7 +135,10 @@
       margin-bottom: 1rem;
     }
 
-    .body-text + .body-text { margin-top: 0; color: var(--white); }
+    .body-text+.body-text {
+      margin-top: 0;
+      color: var(--white);
+    }
 
     ul.actions-list {
       margin: 0.5rem 0 1rem 0;
@@ -125,7 +166,8 @@
       color: var(--white);
     }
 
-    .body-text a, ul.actions-list a {
+    .body-text a,
+    ul.actions-list a {
       color: inherit;
       text-decoration: underline;
       text-underline-offset: 3px;
@@ -141,56 +183,65 @@
     footer p {
       font-family: var(--font-mono);
       font-size: 0.65rem;
-      color: rgba(255,255,255,0.35);
+      color: rgba(255, 255, 255, 0.35);
       letter-spacing: 0.1em;
       line-height: 2;
       text-transform: uppercase;
     }
 
     @media (max-width: 768px) {
-      .page-wrap { grid-template-columns: 1fr; }
-      .col-right { margin-top: 0; }
-      h1 { grid-column: 1; }
+      .page-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .col-right {
+        margin-top: 0;
+      }
+
+      h1 {
+        grid-column: 1;
+      }
     }
 
-    .label{
-      border-bottom: none;}
-
+    .label {
+      border-bottom: none;
+    }
   </style>
 </head>
+
 <body>
 
- <nav>
+  <nav>
     <div class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-<ul class="nav-links">
-  <li class="logo"><a href="index.html">Nina</a></li>
-  <li class="spacer"></li>
-  <li class="dropdown"><a href="#">Chi siamo</a>
-    <ul class="submenu">
-      <li><a href="manifesto.html">Manifesto</a></li>
-      <!-- <li><a href="#">Miss/vis</a></li> -->
-      <li><a href="storia.html">Storia</a></li>
-      <li><a href="collaborazioni.html">Collaborazioni</a></li>
-      <li><a href="https://www.nina.watch/index_old.html#links" target="_blank">Archivio Link</a></li>
-      <li><a href="https://www.nina.watch/index_old.html#audio" target="_blank">Archivio Audio</a></li>
-    </ul>
-   </li>
-   <li class="dropdown">
-     <a href="cosa_facciamo.html">Cosa facciamo</a>
-    <ul class="submenu">
-      <li><a href="festival.html">Festival</a></li>
-      <li><a href="https://www.nina.watch/mostra-incomputabile/">Mostra</a></li>
-      <li><a href="sindacato.html">Sindacato</a></li>
-      <li><a href="rivista.html">Rivista</a></li>
-      <li><a href="incontri.html">Incontri</a></li>
-    </ul>
-    </li> 
-    <li class="dropdown"><a href="partecipa.html">Partecipa</a>
-      <!--
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links">
+      <li class="logo"><a href="index.html">Nina</a></li>
+      <li class="spacer"></li>
+      <li class="dropdown"><a href="#">Chi siamo</a>
+        <ul class="submenu">
+          <li><a href="manifesto.html">Manifesto</a></li>
+          <!-- <li><a href="#">Miss/vis</a></li> -->
+          <li><a href="storia.html">Storia</a></li>
+          <li><a href="collaborazioni.html">Collaborazioni</a></li>
+          <li><a href="https://www.nina.watch/index_old.html#links" target="_blank">Archivio Link</a></li>
+          <li><a href="https://www.nina.watch/index_old.html#audio" target="_blank">Archivio Audio</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="cosa_facciamo.html">Cosa facciamo</a>
+        <ul class="submenu">
+          <li><a href="festival.html">Festival</a></li>
+          <li><a href="mostra_incomputabile.html">Mostra</a></li>
+          <li><a href="sindacato.html">Sindacato</a></li>
+          <li><a href="rivista.html">Rivista</a></li>
+          <li><a href="incontri.html">Incontri</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a href="partecipa.html">Partecipa</a>
+        <!--
     <ul class="submenu">
       <li><a href="#">Partecipa alle riunioni</a></li>
       <li><a href="#">Ospita un evento</a></li>
@@ -198,33 +249,40 @@
       <li><a href="#">Call aperte</a></li>
     </ul>
     -->
-  </li>
-  <li><a href="contattaci.html">Contatti</a></li>
-</ul>
+      </li>
+      <li><a href="contattaci.html">Contatti</a></li>
+    </ul>
 
-</nav>
+  </nav>
 
   <div class="page-wrap">
-
     <h1>Sindacato</h1>
 
-    <p class="lead">Questo progetto del <em>sindacato digitale universale</em> dà una cornice politica più definita, una continuità politica al documento/progetto del secondo anno di Nina e cioè <a href="https://www.nina.watch/alice/" target="_blank">Alice</a>.</p>
-
-
     <div class="col-left">
+
+      <p class="lead">Questo progetto del <em>sindacato digitale universale</em> dà una cornice politica più definita,
+        una continuità politica al documento/progetto del secondo anno di Nina e cioè <a
+          href="https://www.nina.watch/alice/" target="_blank">Alice</a>.</p>
+
       <p class="launch-date"><em>Presentazione e Lancio:<br><strong>9 maggio 2026</strong></em></p>
 
-      <p class="body-text">Le premesse che ci hanno portato a ipotizzare e sperare in un'alleanza tra 1.idee 2.capacità tecniche 3.infrastrutture dati / server e 4.denaro sono lì elencate e rimangono valilde.<br>
-      Che caratteristiche devono avere queste azioni?</p>
+      <p class="body-text">Le premesse che ci hanno portato a ipotizzare e sperare in un'alleanza tra 1.idee 2.capacità
+        tecniche 3.infrastrutture dati / server e 4.denaro sono lì elencate e rimangono valilde.<br>
+        Che caratteristiche devono avere queste azioni?</p>
 
       <ul class="actions-list">
         <li>avere un obiettivo specifico — un servizio, un'azienda, una tecnologia —</li>
         <li>fornire strumenti collettivi per una forma di resistenza che sia affiancata da una richiesta.</li>
-        <li>avere una narrativa o una tecnologia che permetta una risposta visibile, misurabile, raccontabile, qualora non si sia ascoltati. Pensate all'equivalente di uno "sciopero" — ma visto che non siamo lavoratori, si deve ricorrere ad altri metodi.</li>
-        <li>raccogliere dati, o persone, interesse, evidenze utili a utilizzare alcune delle leggi esistenti (pensando ai regolamenti europei GDPR DMA DSA in primis).</li>
+        <li>avere una narrativa o una tecnologia che permetta una risposta visibile, misurabile, raccontabile, qualora
+          non si sia ascoltati. Pensate all'equivalente di uno "sciopero" — ma visto che non siamo lavoratori, si deve
+          ricorrere ad altri metodi.</li>
+        <li>raccogliere dati, o persone, interesse, evidenze utili a utilizzare alcune delle leggi esistenti (pensando
+          ai regolamenti europei GDPR DMA DSA in primis).</li>
       </ul>
 
-      <p class="body-text">Quelle che seguono sono alcune delle prime possibili azioni del sindacato. In particolare le prime tre verranno presentate durante il <a href="festival.html">festival di Nina</a> e verranno descritte nelle <a href="rivista.html">pagine della rivista</a>.</p>
+      <p class="body-text">Quelle che seguono sono alcune delle prime possibili azioni del sindacato. In particolare le
+        prime tre verranno presentate durante il <a href="festival.html">festival di Nina</a> e verranno descritte nelle
+        <a href="rivista.html">pagine della rivista</a>.</p>
     </div>
 
     <!-- <div class="col-right">
@@ -236,42 +294,43 @@
     </div> -->
 
     <div class="label">Materiali </p>
-  <div class="d-flex flex-wrap gap-3 mt-3">
-    <a href="evento-festival.ics" download class="festival-calendar-link">
-      <span class="btn-icon"><i class="bi bi-file-earmark-text"></i></span>
-      <span>Leggi le Premesse Politiche</span>
-    </a>
-<br>
-    <a href="manifesto.pdf" class="festival-calendar-link">
-      <span class="btn-icon"><i class="bi bi-file-earmark-text"></i></span>
-      <span>Leggi il Manifesto</span>
-    </a>
-<br>
-    <a href="festival.html" class="festival-calendar-link">
-      <span class="btn-icon"><i class="bi bi-file-earmark-text"></i></span>
-      <span>Leggi l'articolo per la rivista</span>
-    </a>
-  </div>
-</div> 
+      <div class="d-flex flex-wrap gap-3 mt-3">
+        <a href="evento-festival.ics" download class="festival-calendar-link">
+          <span class="btn-icon"><i class="bi bi-file-earmark-text"></i></span>
+          <span>Leggi le Premesse Politiche</span>
+        </a>
+        <br>
+        <a href="manifesto.pdf" class="festival-calendar-link">
+          <span class="btn-icon"><i class="bi bi-file-earmark-text"></i></span>
+          <span>Leggi il Manifesto</span>
+        </a>
+        <br>
+        <a href="festival.html" class="festival-calendar-link">
+          <span class="btn-icon"><i class="bi bi-file-earmark-text"></i></span>
+          <span>Leggi l'articolo per la rivista</span>
+        </a>
+      </div>
+    </div>
   </div>
 
   <footer>
     <p>N.I.N.A APS<br>C.F. 98021140151<br>Via Belgirate, 15 Milano<br>Copyright 2026</p>
   </footer>
   <script>
-document.querySelector(".hamburger").addEventListener("click", () => {
-  document.querySelector(".nav-links").classList.toggle("open");
-});
+    document.querySelector(".hamburger").addEventListener("click", () => {
+      document.querySelector(".nav-links").classList.toggle("open");
+    });
 
-// Apri i dropdown su mobile con il tocco
-document.querySelectorAll(".dropdown > a").forEach(link => {
-  link.addEventListener("click", (e) => {
-    if (window.innerWidth <= 1024) {
-      e.preventDefault();
-      link.parentElement.classList.toggle("open");
-    }
-  });
-});
-</script>
+    // Apri i dropdown su mobile con il tocco
+    document.querySelectorAll(".dropdown > a").forEach(link => {
+      link.addEventListener("click", (e) => {
+        if (window.innerWidth <= 1024) {
+          e.preventDefault();
+          link.parentElement.classList.toggle("open");
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>
