@@ -6,10 +6,202 @@
   <title>NINA – Ne Intelligente Ne Artificiale</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <style> 
+
+  :root {
+  --black: #0a0a0a;
+  --white: #f5f0e8;
+  --lime: #c8f500;
+  --pink: #ff2d6b;
+  --yellow: #ffe600;
+  --purple: #b48cff;
+  --cyan: #00e5ff;
+  --navy: #0d0d1a;
+  --font-display: 'Hanken Grotesk', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-body: 'Hanken Grotesk', sans-serif;
+}
+
+    .link-freccia {
+  text-decoration: none;
+  color: var(--black);
+  position: relative;
+  padding-left: 1.2em; /* spazio per la freccia */
+}
+
+.link-freccia::before {
+  content: "➜"; /* freccina */
+  color: var(--pink);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.link-freccia:hover {
+  color: var(--pink);
+}
+
+ /* ── LAYOUT ── */
+    .page-wrap {
+      margin-top: 48px;
+      padding: 4rem 8vw 6rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto 1fr;
+      gap: 0 4vw;
+      min-height: calc(100vh - 48px - 80px);
+    }
+
+    /* Col left spans all rows */
+    .col-left {
+      grid-column: 1;
+    }
+
+    .col-right {
+      grid-column: 2;
+      padding-top: 0.2rem;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 00;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 2rem;
+      grid-column: 1 / -1;
+    }
+
+    .launch-date {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--white);
+      line-height: 1.5;
+      margin-bottom: 2.5rem;
+    }
+
+    .launch-date strong {
+      font-weight: 500;
+    }
+
+    .scarica {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1.8vw, 1.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--page-text);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.2rem;
+      transition: opacity 0.2s;
+    }
+
+    .scarica:hover {
+      opacity: 0.6;
+    }
+
+    .lead {
+      font-family: var(--font-display);
+      color: var(--white);
+      font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.35;
+      margin-bottom: 2rem;
+    }
+
+    .lead a {
+      color: var(--lime);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .body-text {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.3vw, 1rem);
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .body-text+.body-text {
+      margin-top: 0;
+      color: var(--white);
+    }
+
+    ul.actions-list {
+      margin: 0.5rem 0 1rem 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul.actions-list li {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.3vw, 1rem);
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--white);
+      padding-left: 1.2rem;
+      position: relative;
+      margin-bottom: 0.4rem;
+    }
+
+    ul.actions-list li::before {
+      content: '▪';
+      position: absolute;
+      left: 0;
+      font-size: 0.6rem;
+      top: 0.45rem;
+      color: var(--white);
+    }
+
+    .body-text a,
+    ul.actions-list a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    footer p {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: rgba(255, 255, 255, 0.35);
+      letter-spacing: 0.1em;
+      line-height: 2;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .col-right {
+        margin-top: 0;
+      }
+
+      h1 {
+        grid-column: 1;
+      }
+    }
+  </style>
 </head>
 <body>
+
 
   <!-- NAV -->
    <nav>
@@ -53,59 +245,35 @@
   </li>
   <li><a href="contattaci.html">Contatti</a></li>
 </ul>
-
 </nav>
 
-  <!-- HERO -->
-   <!--
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-bg-img"></div>
-    <div class="hero-content">
-      <img class="hero-logo-img" src="img/NinaLogo.png" alt="NINA logo">
-      <img class="hero-tagline-img" src="img/image_1.png" alt="Nè intelligente nè artificiale">
+  <section class="manifesto-section">
+    <div class="manifesto-banner">
+      <div class="storia-banner-bg"></div>
+      <div class="storia-banner-text">
+        <h3>STORIA</h3>    
+          <p class="subtitle">Da gennaio 2024 ad oggi</p>
+    </div>
     </div>
   </section>
--->
 
-
-  <!-- SLIDER -->
-    <!--
-  <section class="slider-section">
-    <div class="slider-track" id="sliderTrack">
-      <div class="slide">
-        <img src="img/Rectangle_17.png" alt="Evento NINA">
-      </div>
-      <div class="slide">
-        <img src="https://picsum.photos/1400/420?random=2" alt="Slide 2">
-      </div>
-      <div class="slide">
-        <img src="https://picsum.photos/1400/420?random=3" alt="Slide 3">
-      </div>
-    </div>
-   
-    <div class="slider-dots">
-      <button class="dot active" onclick="goToSlide(0)"></button>
-      <button class="dot" onclick="goToSlide(1)"></button>
-      <button class="dot" onclick="goToSlide(2)"></button>
-    </div>
-    
-  </section>
--->
-  <!-- DI COSA PARLIAMO – 1 -->
+    <!-- AMICI-->
   <section class="two-col">
     <div class="two-col-text">
       <p><b>N.i.n.a.</b> acronimo di “Né intelligente né artificiale”, dal titolo del libro di Kate Crawford, è un gruppo di ricerca nato a Milano a gennaio 2024 con lo scopo di indagare quale sarà l’impatto dell’intelligenza artificiale su alcune aree tematiche come i mondi del lavoro, la sostenibilità ambientale, discriminazioni e disuguaglianze vecchie e nuove, la circolazione delle informazioni. E, naturalmente, quali nuove istanze politiche si possono agire in questo contesto.
-<br>
-Si può dire che siamo un gruppo con una composizione che piacerebbe a Norbert Wiener, il padre della cibernetica, che sosteneva che bisognava “attaccare” i problemi informatici organizzando delle squadre mobili di esperti di cose diverse tra loro.</p>
-      <a href="cosa_facciamo.html" class="btn"><span class="btn-icon">□</span> COSA FACCIAMO <span class="btn-icon">□</span></a>
+        <br> Si può dire che siamo un gruppo con una composizione che piacerebbe a Norbert Wiener, il padre della cibernetica, che sosteneva che bisognava “attaccare” i problemi informatici organizzando delle squadre mobili di esperti di cose diverse tra loro.</p>
+        <br>
+    <a href="cosa_facciamo.html" class="festival-calendar-link">
+          <span class="btn-icon"><i class="bi bi-arrow-right"></i></span>
+          <span>COSA FACCIAMO</span>
+        </a>
     </div>
     <div class="two-col-image">
       <img src="img/2025_oriz_4_unimi.jpg" alt="Evento NINA">
     </div>
   </section>
 
-  <!-- DI COSA PARLIAMO – 2 -->
+   <!-- DI COSA PARLIAMO – 2 -->
   <section class="two-col reverse">
     <div class="two-col-image">
       <img src="img/2025_oriz_3_strada.jpg" alt="Archivio">
@@ -139,60 +307,7 @@ Si può dire che siamo un gruppo con una composizione che piacerebbe a Norbert W
     </div>
   </section>
 <br clear="all"><br clear="all">
-  <!-- NINA FESTIVAL 2026 -->
-  <section class="festival-section">
-    <!--<h2>NINA FESTIVAL 2026</h2>-->
-    <div class="festival-banner">
-      <div class="festival-banner-bg"></div>
-      <div class="festival-banner-text">
-        <h3>NINA FESTIVAL</h3>
-        <p class="subtitle">Arrivano le intelligenze collettive</p>
-        <p class="dates">8 . 9 · 10Maggio 2026</p>
-        <p class="location">Milano e Roma</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- PROGETTI IN CORSO -->
-  <section class="projects-section">
-    <h2>Progetti in corso</h2>
-    <div class="projects-grid">
-      <a href="rivista.html" class="project-card">
-        <div>
-          <h3>Rivista</h3>
-          <p>Intelligenza autonoma - Nuove macchine celibi</p>
-        </div>
-        <span class="project-arrow">→</span>
-      </a>
-      <a href="sindacato.html" class="project-card">
-        <div>
-          <h3>Sindacato universale digitale</h3>
-          <p>Internet workers of the world</p>
-        </div>
-        <span class="project-arrow">→</span>
-      </a>
-      <a href="https://www.nina.watch/mostra-incomputabile/" class="project-card">
-        <div>
-          <h3>Mostra Incomputabile</h3>
-          <p>Se il potere oggi passa dal calcolo, che cosa significa non essere computabili?</p>
-        </div>
-        <span class="project-arrow">→</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- CONTATTI -->
-   <!--
-  <section class="contact-section">
-    <h2>Contattaci</h2>
-    <div class="contact-form">
-      <input type="text" placeholder="Nome">
-      <input type="email" placeholder="Email">
-      <textarea placeholder="Messaggio"></textarea>
-      <button class="btn">Invia →</button>
-    </div>
-  </section>
--->
   <!-- FOOTER -->
   <footer>
     <p>N.I.N.A APS<br>C.F. 98021140151<br>Via Belgirate, 15 Milano<br>Copyright 2026</p>

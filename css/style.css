@@ -19,6 +19,7 @@
   --font-display: 'Hanken Grotesk', sans-serif;
   --font-mono: 'Space Mono', monospace;
   --font-body: 'Hanken Grotesk', sans-serif;
+  --p-body:1rem;
 }
 
 html { scroll-behavior: smooth; }
@@ -27,7 +28,7 @@ body {
   background: var(--white);
   color: var(--black);
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: var(--p-body);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -471,8 +472,6 @@ nav {
 }
 
 /* ─── MANIFESTO BANNER ─── */
-.manifesto-section {
-}
 
 .manifesto-section h2 {
   font-family: var(--font-display);
@@ -561,6 +560,78 @@ nav {
   font-size: 1rem;
   line-height: 1;
 }
+
+
+/* ─── COLLABO BANNER ─── */
+
+.collabo-banner-bg {
+  position: absolute;
+  inset: 0;
+  background: url('../img/hero-collabo.jpg') left 60% / cover no-repeat;
+}
+
+.collabo-banner-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.collabo-banner-text h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  color: var(--pink);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.collabo-banner-text .subtitle {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  color: var(--pink);
+  opacity: 0.9;
+  margin-bottom: 0.4rem;
+}
+
+
+/* ─── STORIA BANNER ─── */
+
+.storia-banner-bg {
+  position: absolute;
+  inset: 0;
+  background: url('../img/hero-storia.jpg') left 60% / cover no-repeat;
+  z-index: 0;
+}
+
+.storia-banner-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+
+.storia-banner-text h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  color: var(--lime);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+  z-index: 99999999;
+}
+
+.storia-banner-text .subtitle {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  color: var(--lime);
+  opacity: 0.9;
+  margin-bottom: 0.4rem;
+}
+
 
 /* ─── PROGETTI IN CORSO ─── */
 .projects-section {

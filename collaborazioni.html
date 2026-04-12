@@ -6,29 +6,204 @@
   <title>NINA – Ne Intelligente Ne Artificiale</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <style>
+  <style> 
+
+  :root {
+  --black: #0a0a0a;
+  --white: #f5f0e8;
+  --lime: #c8f500;
+  --pink: #ff2d6b;
+  --yellow: #ffe600;
+  --purple: #b48cff;
+  --cyan: #00e5ff;
+  --navy: #0d0d1a;
+  --font-display: 'Hanken Grotesk', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-body: 'Hanken Grotesk', sans-serif;
+}
+
     .link-freccia {
   text-decoration: none;
-  color: #777; /* grigio */
+  color: var(--black);
   position: relative;
   padding-left: 1.2em; /* spazio per la freccia */
 }
 
 .link-freccia::before {
   content: "➜"; /* freccina */
-  color: orange;
+  color: var(--pink);
   position: absolute;
   left: 0;
   top: 0;
 }
+
+.link-freccia:hover {
+  color: var(--pink);
+}
+
+ /* ── LAYOUT ── */
+    .page-wrap {
+      margin-top: 48px;
+      padding: 4rem 8vw 6rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto 1fr;
+      gap: 0 4vw;
+      min-height: calc(100vh - 48px - 80px);
+    }
+
+    /* Col left spans all rows */
+    .col-left {
+      grid-column: 1;
+    }
+
+    .col-right {
+      grid-column: 2;
+      padding-top: 0.2rem;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 00;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 2rem;
+      grid-column: 1 / -1;
+    }
+
+    .launch-date {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--white);
+      line-height: 1.5;
+      margin-bottom: 2.5rem;
+    }
+
+    .launch-date strong {
+      font-weight: 500;
+    }
+
+    .scarica {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1.8vw, 1.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--page-text);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.2rem;
+      transition: opacity 0.2s;
+    }
+
+    .scarica:hover {
+      opacity: 0.6;
+    }
+
+    .lead {
+      font-family: var(--font-display);
+      color: var(--white);
+      font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.35;
+      margin-bottom: 2rem;
+    }
+
+    .lead a {
+      color: var(--lime);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .body-text {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.3vw, 1rem);
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .body-text+.body-text {
+      margin-top: 0;
+      color: var(--white);
+    }
+
+    ul.actions-list {
+      margin: 0.5rem 0 1rem 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul.actions-list li {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.3vw, 1rem);
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--white);
+      padding-left: 1.2rem;
+      position: relative;
+      margin-bottom: 0.4rem;
+    }
+
+    ul.actions-list li::before {
+      content: '▪';
+      position: absolute;
+      left: 0;
+      font-size: 0.6rem;
+      top: 0.45rem;
+      color: var(--white);
+    }
+
+    .body-text a,
+    ul.actions-list a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    footer p {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: rgba(255, 255, 255, 0.35);
+      letter-spacing: 0.1em;
+      line-height: 2;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .col-right {
+        margin-top: 0;
+      }
+
+      h1 {
+        grid-column: 1;
+      }
+    }
   </style>
 </head>
 <body>
 
   <!-- NAV -->
-   <nav>
+<nav>
   <div class="hamburger">
     <span></span>
     <span></span>
@@ -58,33 +233,38 @@
     </ul>
     </li> 
 <li class="dropdown"><a href="partecipa.html">Partecipa</a>
-      <!--
-    <ul class="submenu">
-      <li><a href="#">Partecipa alle riunioni</a></li>
-      <li><a href="#">Ospita un evento</a></li>
-      <li><a href="#">Volontari per il festival</a></li>
-      <li><a href="#">Call aperte</a></li>
-    </ul>
-    -->
   </li>
   <li><a href="contattaci.html">Contatti</a></li>
 </ul>
 
 </nav>
 
+  <section class="manifesto-section">
+    <div class="manifesto-banner">
+      <div class="collabo-banner-bg"></div>
+      <div class="collabo-banner-text">
+        <h3>COLLABORAZIONI E PARTECIPAZIONI</h3> 
+        <p class="subtitle">Con chi collaboriamo, cosa dicono di noi</p>   
+    </div>
+  </section>
 
+  
 
-  <!-- AMICI -->
+    <!-- AMICI-->
   <section class="two-col">
     <div class="two-col-text">
-      <h2>Amici</h2>
+    <p>Negli ultimi due anni non siamo stati fermi. Abbiamo allargato i nostri orizzonti, tessuto relazioni vere con altre realtà civiche e movimenti che, come noi, credono che la politica si faccia con le persone. </p>
+      <br>
+      <h2>Amicə</h2>
         <a href="https://www.ippolita.net/" target="_blank" class="link-freccia" >Ippolita</a><br>
         <a href="https://www.periodthinktank.org/" target="_blank" class="link-freccia" >Period think tank</a><br>
         <a href="https://reclaimthetech.it/" target="_blank" class="link-freccia" >Reclaim the tech</a><br>
         <a href="https://reversing.works/" target="_blank" class="link-freccia" >Reversing works</a><br>
         <a href="https://ilmanifesto.it/mema" target="_blank" class="link-freccia" >Mema</a>   <br>     
-        
-      <a href="cosa_facciamo.html" class="btn"><span class="btn-icon">□</span> COSA FACCIAMO <span class="btn-icon">□</span></a>
+        <a href="cosa_facciamo.html" class="festival-calendar-link">
+          <span class="btn-icon"><i class="bi bi-arrow-right"></i></span>
+          <span>COSA FACCIAMO</span>
+        </a>
     </div>
     <div class="two-col-image">
       <img src="img/2025_oriz_2_festival.jpg" alt="Evento NINA">
@@ -97,27 +277,32 @@
       <img src="img/2025_oriz_5_unimi_2.jpg" alt="Archivio">
     </div>
     <div class="two-col-text">
+      <p>Il nostro lavoro non è passato inosservato. Giornaliste e giornalisti, attiviste e attivisti, osservatrici e osservatori, voci indipendenti hanno scritto di noi, delle nostre battaglie e delle idee che portiamo avanti ogni giorno.</p>
+      <br>
       <h2>Su di noi</h2>
             <a href="https://radiowombat.net/radio-contado-176/" target="_blank" class="link-freccia" >Intervista a Radio Contado - Radio Contado</a><br>
             <a href="https://milanoinmovimento.com/eventi/14-11-informazione-controllo-guerra-tecnologie-della-vita-e-tecnologie-della-morte-lambretta" target="_blank" class="link-freccia" >Informazione, controllo, guerra. Tecnologie della vita e tecnologie della morte - Milano in movimento</a><br>
             <a href="https://www.technologybloggers.org/artificial-intelligence/neither-intelligent-nor-artificial/" target="_blank" class="link-freccia" >Neither Intelligent, Nor Artificial - Technology blogger</a><br>
             <a href="https://milanoinmovimento.com/eventi/20-05-salut-ai-quando-il-diritto-alla-salute-incontra-gli-algoritmi-via-boncompagni-51-10" target="_blank" class="link-freccia" >Salut-AI, quando il diritto alla salute incontra gli algoritmi - Milano in Movimento</a><br>
             <a href="https://milanoinmovimento.com/culture/il-nostro-desiderio-e-senza-nome-ma-il-maggio-di-nina-non-fara-a-meno-di-molto-coraggio" target="_blank" class="link-freccia" >Il nostro desiderio è senza nome - Milano in Movimento</a><br>
-            <a href="https://zero.eu/it/eventi/337765-nina-festival,milano/" target="_blank" class="link-freccia" >Nina festival 9-10 maggio - Zero</a><br>
+            <a href="https://zero.eu/it/eventi/337765-nina-festival,milano/" target="_blank" class="link-freccia" > Nina festival 9-10 maggio - Zero </a><br>
             <a href="https://milanoinmovimento.com/eventi/nina-festival-9-10-maggio" target="_blank" class="link-freccia" >Nina festival 9-10 maggio - Milano in Movimento</a>     <br>       
-            <a href="https://milanoinmovimento.com/culture/non-calcolateci-incomputabile-di-alexander-galloway" target="_blank" class="link-freccia" >Non calcolateci!” – Incomputabile di Alexander Galloway - Milano in Movimento</a><br>
-            <i class="bi bi-headphones"></i> <a href="./media/AUDIO-rou.mp3" target="_blank" class="link-freccia" >Audio per radio onda d'urto in occasione della presentazione di "Incomputabile"</a><br>
+            <a href="https://milanoinmovimento.com/culture/non-calcolateci-incomputabile-di-alexander-galloway" target="_blank" class="link-freccia"> Non calcolateci!”. Incomputabile di Alexander Galloway - Milano in Movimento</a><br>
+            <a href="./media/AUDIO-rou.mp3" target="_blank" class="link-freccia"> Audio per radio onda d'urto in occasione della presentazione di "Incomputabile"</a><br>
             <audio src="./media/AUDIO-rou.mp3" controls></audio><br>
-            <a href="https://www.rsi.ch/rete-due/programmi/cultura/la-rivista/%E2%80%9CQ-Code%E2%80%9D--2240398.html" target="_blank" class="link-freccia" >Q code parla di Nina su RSI.ch</a><br>
-            <a href="https://www.qcodemag.it/podcast/n-i-n-a-ne-intelligente-ne-artificiale/" target="_blank" class="link-freccia" >n.i.n.a. Né intelligente, né artificiale - QCode</a><br>
-            <a href="https://milanoinmovimento.com/primo-piano/la-guerra-e-lai-il-paradigma-della-palestina-2" target="_blank" class="link-freccia" >La guerra e l’AI: il paradigma della Palestina - Milano in Movimento</a><br>
-            <i class="bi bi-headphones"></i> <a href="./media/radiopop.mp3" target="_blank" class="link-freccia" >Audio per Radiopop</a><br>
+            <a href="https://www.rsi.ch/rete-due/programmi/cultura/la-rivista/%E2%80%9CQ-Code%E2%80%9D--2240398.html" target="_blank" class="link-freccia"> Q code parla di Nina su RSI.ch</a><br>
+            <a href="https://www.qcodemag.it/podcast/n-i-n-a-ne-intelligente-ne-artificiale/" target="_blank" class="link-freccia"> n.i.n.a. Né intelligente, né artificiale - QCode</a><br>
+            <a href="https://milanoinmovimento.com/primo-piano/la-guerra-e-lai-il-paradigma-della-palestina-2" target="_blank" class="link-freccia"> La guerra e l’AI: il paradigma della Palestina - Milano in Movimento</a><br>
+            <a href="./media/radiopop.mp3" target="_blank" class="link-freccia"> Audio per Radio Popolare</a><br>
             <audio src="./media/radiopop.mp3" controls></audio><br>
-            <a href="https://www.arcipelagomilano.org/archives/63642" target="_blank" class="link-freccia" >L’intelligenza artificiale: l'innovazione del dispositivo di dominio capitalista - Arcipelago Milano</a><br>
-            <a href="https://effimera.org/i-20-passi-di-nina-di-nina/" target="_blank" class="link-freccia" >I venti passi di Nina - Effimera</a><br>
-            <a href="https://milanoinmovimento.com/speciali/le-conseguenze-dellai" target="_blank" class="link-freccia" >Speciale "le conseguenze dell'AI" - Milano in Movimento</a><br>
-            <a href="https://milanoinmovimento.com/culture/chi-e-n-i-n-a" target="_blank" class="link-freccia" >Chi è N.i.n.a.? - Milano in Movimento</a><br>
-      <a href="https://www.nina.watch/index_old.html#audio" class="btn" target="_blank"><span class="btn-icon">□</span> ARCHIVIO AUDIO <span class="btn-icon">□</span></a>
+            <a href="https://www.arcipelagomilano.org/archives/63642" target="_blank" class="link-freccia"> L’intelligenza artificiale: l'innovazione del dispositivo di dominio capitalista - Arcipelago Milano</a><br>
+            <a href="https://effimera.org/i-20-passi-di-nina-di-nina/" target="_blank" class="link-freccia"> I venti passi di Nina - Effimera</a><br>
+            <a href="https://milanoinmovimento.com/speciali/le-conseguenze-dellai" target="_blank" class="link-freccia"> Speciale "le conseguenze dell'AI" - Milano in Movimento</a><br>
+            <a href="https://milanoinmovimento.com/culture/chi-e-n-i-n-a" target="_blank" class="link-freccia"> Chi è N.i.n.a.? - Milano in Movimento</a><br>
+       <a href="https://www.nina.watch/index_old.html#audio" class="festival-calendar-link" target="_blank">
+          <span class="btn-icon"><i class="bi bi-arrow-right"></i></span>
+          <span>ARCHIVIO AUDIO</span>
+        </a>
     </div>
   </section>
 
@@ -126,21 +311,21 @@
     <div class="two-col-text">
       <h2>Partecipazioni (primi due anni)</h2>
           <a href="img/visionaria_2025.jpg" target="_blank"  class="link-freccia" >Visionaria 2025</a><br>
-          <a href="#" class="link-freccia">IA e società - 22 maggio - municipio IV - ore 18</a><br>
-          <a href="img/ecora.jpg" target="_blank" class="link-freccia" >&gt; &gt; Ecorà - Locandina</a><br>
-          <a href="img/triennale.jpg" target="_blank" class="link-freccia" >&gt; &gt; Intelligenza artificiale - potere o sapere? -Locandina</a><br>
-          <a href="img/la_strada.webp" target="_blank" class="link-freccia" >Welcome <b>Nina Roma</b> - 6 marzo [at La Strada]</a><br> 
+          <a href="#" class="link-freccia"> IA e società - 22 maggio - municipio IV - ore 18</a><br>
+          <a href="img/ecora.jpg" target="_blank" class="link-freccia" > Ecorà - Locandina</a><br>
+          <a href="img/triennale.jpg" target="_blank" class="link-freccia" > Intelligenza artificiale - potere o sapere? -Locandina</a><br>
+          <a href="img/la_strada.webp" target="_blank" class="link-freccia" > Welcome <b>Nina Roma</b> - 6 marzo [at La Strada]</a><br> 
           <a href="img/paci_1.jpg" target="_blank" style="margin-right:0px" class="link-freccia" >Presentazione <b>Nina Bergamo</b> - 27 marzo [at Pacì Paciana]</a> - <a href="img/paci_2.jpg" target="_blank" class="link-freccia" > flyer 2</a><br>
-          <a href="pdf/NINACodedGazesStatale.pdf" target="_blank" class="link-freccia" >&gt; &gt; Coded Gazes - seminario a Scienze politiche - Presentazione</a>           <a href="img/coded_gazes.jpg" target="_blank" class="link-freccia" >&gt; &gt; Locandina</a><br>
+          <a href="pdf/NINACodedGazesStatale.pdf" target="_blank" class="link-freccia" > Coded Gazes - seminario a Scienze politiche - Presentazione</a>           <a href="img/coded_gazes.jpg" target="_blank" class="link-freccia" >&gt; &gt; Locandina</a><br>
           <a href="https://openscience.unimi.it/ciclo-di-incontri-sulla-comunicazione-scientifica/" target="_blank"  class="link-freccia">Ciclo di incontri sulla Comunicazione Scientifica - Unimi</a><br>
           <a href="https://reclaimthetech.it/festival-2024/" target="_blank"  class="link-freccia" >Reclaim the tech 2024</a><br>
           <a href="https://roma.repubblica.it/cronaca/2024/09/02/news/guerre_stellari_sette_giorni_di_dibattiti_visionaria_urban_fest-423474064/" target="_blank"  class="link-freccia" >Visionaria 2024 - Repubblica</a><br>
           <a href="https://lastatalenews.unimi.it/comunicazione-scientifica-statale-quattro-incontri-sulletica-ricerca" target="_blank"  class="link-freccia" >Quattro incontri sulla ricerca - La statale news</a><br>
           <a href="https://www.facebook.com/story.php?story_fbid=8793124444068155&id=100001120606676&rdid=R8grittJ9w5rBkU6" target="_blank"  class="link-freccia" >AI un viaggio nel cuore della tecnologia del futuro - Presso Camera del lavoro di Milano</a><br>
-      
-
-      <a href="https://www.nina.watch/index_old.html#links" class="btn"><span class="btn-icon">□</span> ARCHIVIO LINK<span class="btn-icon">□</span></a>
-    </div>
+             <a href="https://www.nina.watch/index_old.html#links" class="festival-calendar-link" target="_blank">
+          <span class="btn-icon"><i class="bi bi-arrow-right"></i></span>
+          <span>ARCHIVIO LINKS</span>
+        </a>    </div>
     <div class="two-col-image">
       <img src="img/Rectangle_17.png" alt="Evento NINA">
     </div>
