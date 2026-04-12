@@ -149,7 +149,7 @@
       background: var(--pink);
     }
 
-    .banner-rivista .banner-label { color: var(--yellow); }
+    .banner-rivista .banner-label { color: var(--white); }
 
     .banner-sindacato {
       aspect-ratio: unset;
@@ -159,7 +159,7 @@
     }
 
     .banner-sindacato .banner-label { color: var(--white); }
-    .banner-sindacato .banner-sub { color: rgba(255,255,255,0.7); }
+    .banner-sindacato .banner-sub { color: var(--white); }
 
     /* ── ROW 2: Mostra header ── */
     .header-mostra {
@@ -188,13 +188,13 @@
     }
 
     .banner-mostra .banner-label { color: var(--pink); }
-    .banner-mostra .banner-sub { color: rgba(255,20,80,0.6); }
+    .banner-mostra .banner-sub { color: var(--black)); }
 
     .banner-festival {
-      background: var(--black);
+      background: var(--white);
     }
 
-    .banner-festival .banner-label { color: var(--white); }
+    .banner-festival .banner-label { color: var(--black); }
     .banner-festival .banner-inner { padding: 2.5rem 2rem; text-align: center; }
 
     .festival-quote {
@@ -341,7 +341,7 @@
     <div class="row2-banners">
 
       <!-- Mostra -->
-      <a href="https://www.nina.watch/festival/mostra_incomputabile.html" class="banner banner-mostra">
+      <a href="mostra_incomputabile.html" class="banner banner-mostra">
         <div class="banner-inner">
           <span class="banner-label">Mostra</span>
           <span class="banner-sub">Se il potere passa dal calcolo,<br>cosa significa essere incomputabili?</span>
@@ -350,12 +350,14 @@
       </a>
 
       <!-- Festival -->
-      <a href="festival.html" class="banner banner-festival">
-        <div class="banner-bg" style="background-image: url('img/sfondo_blu.png'); filter: brightness(0.3) saturate(0.6);"></div>
+
+            <a href="festival.html" class="banner banner-festival">
         <div class="banner-inner">
-          <span class="festival-quote">Il Festival di NINA sarà il momento collettivo in cui metteremo in pratica queste azioni e racconteremo il nostro percorso.</span>
-          <span class="btn-dark">□ Leggi di più □</span>
+          <span class="banner-label">Festival</span>
+          <span class="banner-sub">Il Festival di NINA sarà il momento collettivo in cui metteremo in pratica queste azioni e racconteremo il nostro percorso.</span>
+          <span class="banner-arrow" style="color: var(--black);">→</span>
         </div>
+      </a>
       </a>
 
     </div>
