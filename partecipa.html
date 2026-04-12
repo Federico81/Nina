@@ -15,12 +15,10 @@
 
   section {
     padding: 20px;
-    background: #eee;
     margin-bottom: 20px;
   }
 .container2 .contact-section {
   padding: 20px !important;
-  background: #eee !important;
   max-width: none !important;
   width: 100% !important;
 }
@@ -129,15 +127,15 @@
 </nav>
 
 <div class="container2">
-  <section>
-    <p style="margin-top:80px; margin-left: 20px;">Pensi che il Mondo sia sempre più cinico e sbagliato, ma non ti sei arreso all'idea che tutto è perduto e anzi qualcosa si può ancora fare?<br><br>
-    Vuoi dare una mano quando facciamo delle iniziative tipo il festival o la rivista o il sindacato universale digitale?<br><br>
-    Pensi che il lavoro che facciamo siamo importante e vuoi che se ne parli anche nella tua città o nel tuo paese?<br><br>
-    Compila il form qui di fianco e ti risponderemo a stretto giro!</p>
-  </section>
+
   <!-- CONTATTI -->
   <section class="contact-section" style="margin-top:50px">
     <h2>Partecipa!</h2>
+        <p>Pensi che il Mondo sia sempre più cinico e sbagliato, ma non ti sei arreso all'idea che tutto è perduto e anzi qualcosa si può ancora fare?<br><br>
+    Vuoi dare una mano quando facciamo delle iniziative tipo il festival o la rivista o il sindacato universale digitale?<br><br>
+    Pensi che il lavoro che facciamo siamo importante e vuoi che se ne parli anche nella tua città o nel tuo paese?<br><br>
+    Compila il form qui di fianco e ti risponderemo a stretto giro!</p>
+
     <div class="contact-form">
       <form id="partecipa" action="partecipa.php" method="POST">
         <input type="text" placeholder="Nome" name="nome" id="nome">
@@ -151,7 +149,11 @@
           <option value="Altro">Altro</option>
         </select>
         <textarea placeholder="Messaggio" name="messaggio" id="messaggio"></textarea>
-        <button class="btn" type="submit">Invia →</button>
+
+                   <a href="#" class="festival-calendar-link" target="_blank">
+          <button class="btn" type="submit"></button>
+          <span>INVIA</span>
+        </a> 
       </form>
     </div>
   </section>
