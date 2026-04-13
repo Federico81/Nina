@@ -4,12 +4,14 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 */
-include '../alice/include/mysql.pdo.php';
+include './alice/include/mysql.pdo.php';
 // Recupera i dati dal form
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
     $cognome = $_POST['cognome'];
     $email = $_POST['email'];
+    $cosa = $_POST['cosa'];
+    $messaggio = $_POST['messaggio'];
 
     // Query SQL per inserire i dati
     $sql = "INSERT INTO partecipa (nome, cognome, email, cosa, messaggio) VALUES (:nome, :cognome, :email, :cosa, :messaggio)";

@@ -4,7 +4,7 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 */
-include '../alice/include/mysql.pdo.php';
+include './alice/include/mysql.pdo.php';
 // Recupera i dati dal form
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
