@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NINA – Mostra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style> 
+
+.container-custom {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px; /* larghezza massima stile Bootstrap */
+  background-color: var(--white);
+}
+
+/* Breakpoint tablet */
+@media (max-width: 992px) {
+  .container-custom {
+    max-width: 900px;
+    background-color: var(--white);
+  }
+}
+
+/* Breakpoint iPad / small tablet */
+@media (max-width: 768px) {
+  .container-custom {
+    max-width: 700px;
+    background-color: var(--white);
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .container-custom {
+    width: 90%;      /* resta al 90% */
+    max-width: none; /* niente limite fisso */
+  }
+}
+
+    .grid-flex {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 20px;
+    }
+.box {
+  background-color: var(--white);
+  padding: 20px;
+  margin:10px;
+  border: 1px solid var(--black);
+  flex: 1 1 calc(25% - 20px); /* 4 per riga su desktop */
+}
+
+/* Tablet (iPad) — 2 per riga */
+@media (max-width: 1024px) {
+  .box {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+/* Mobile — 1 per riga */
+@media (max-width: 600px) {
+  .box {
+    flex: 1 1 100%;
+  }
+}
+
+    .link-freccia {
+  text-decoration: none;
+  color: #777; /* grigio */
+  position: relative;
+  padding-left: 1.2em; /* spazio per la freccia */
+}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+   <nav>
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+<ul class="nav-links">
+  <li class="logo"><a href="index.html">Nina</a></li>
+  <li class="spacer"></li>
+  <li class="dropdown"><a href="#">Chi siamo</a>
+    <ul class="submenu">
+      <li><a href="manifesto.html">Manifesto</a></li>
+      <!-- <li><a href="#">Miss/vis</a></li> -->
+      <li><a href="storia.html">Storia</a></li>
+      <li><a href="collaborazioni.html">Collaborazioni</a></li>
+      <li><a href="https://www.nina.watch/index_old.html#links" target="_blank">Archivio Link</a></li>
+      <li><a href="https://www.nina.watch/index_old.html#audio" target="_blank">Archivio Audio</a></li>
+    </ul>
+   </li>
+   <li class="dropdown">
+     <a href="cosa_facciamo.html">Cosa facciamo</a>
+    <ul class="submenu">
+      <li><a href="festival.html">Festival</a></li>
+      <li><a href="mostra_incomputabile.html">Mostra</a></li>
+      <li><a href="sindacato.html">Sindacato</a></li>
+      <li><a href="rivista.html">Rivista</a></li>
+      <li><a href="incontri.html">Incontri</a></li>
+    </ul>
+    </li> 
+<li class="dropdown"><a href="partecipa.html">Partecipa</a>
+      <!--
+    <ul class="submenu">
+      <li><a href="#">Partecipa alle riunioni</a></li>
+      <li><a href="#">Ospita un evento</a></li>
+      <li><a href="#">Volontari per il festival</a></li>
+      <li><a href="#">Call aperte</a></li>
+    </ul>
+    -->
+  </li>
+  <li><a href="contattaci.html">Contatti</a></li>
+</ul>
+
+</nav>
+
+  <section class="manifesto-section">
+    <div class="manifesto-banner">
+      <div class="festival-banner-bg-mostra"></div>
+      <div class="manifesto-banner-text">
+        <!--<h3>MOSTRA DELL'INCOMPUTABILE - OPERE</h3>
+  <span class="btn-icon"><i class="bi bi-download"></i></span>-->
+</a>
+    </div>
+  </section>
+
+<br clear="all"><br clear="all"><br clear="all">
+<div class="container-custom">
+  <h3 style="text-align: center;">Le opere contrassegnate con * sono state selezione a seguito della <a href="mostra_incomputabile.html" target="_blank" style="color:#000">call</a></h3>
+<div class="grid-flex">
+  <div class="box"><h3>1 - Data shadows <br> <em>Sabina Leonelli</em> <br> Anno 2024 <br>Opera originale</h3>"Data Shadows è un cortometraggio sperimentale nato dalla collaborazione artistica tra la filosofa della scienza Sabina Leonelli, l’artista Jacob van der Beugel e il regista Oliver Page. Il film esplora in modo radicalmente innovativo il concetto di “ombre dei dati”, tra i temi centrali della filosofia dei dati di Sabina Leonelli. Attraverso una narrazione visiva intensa e poetica, Data Shadows esprime una sintesi luminosa sulla bellezza dei dati, sulla loro materialità, vulnerabilità e mobilità, in grado di raggiungere sensibilmente l'attenzione di pubblici e ambiti disciplinari diversi, sollevando al contempo riflessioni etiche di fondamentale importanza per la nostra contemporaneità."</div>
+  <div class="box"><h3>2 - My Magical Grilled Cheese Sandwich Recipe <br> <em>Dasha Ilina</em> <br>  Anno 2025<br> Opera originale</h3>"Il toast al formaggio viene talvolta usato come metafora di un algoritmo. Preparare un toast al formaggio è facilissimo! Bastano pochi semplici passaggi, proprio come un algoritmo di base. "Dasha's kitchen: My magic grill cheese recipe"" mette in luce l'importanza di un dibattito critico sull'intelligenza artificiale. Gli algoritmi sono sempre più coinvolti nei processi decisionali in un'ampia gamma di settori professionali, e il settore della sicurezza e della videosorveglianza, recentemente soprannominato ""città sicura"", non fa eccezione. Ad esempio, la videosorveglianza algoritmica recentemente adottata dalla Francia, presentata come una necessaria misura di sicurezza per le prossime Olimpiadi del 2024, ha sollevato molti interrogativi su chi tragga realmente beneficio da tale tecnologia. Ispirato alla tendenza online di recensire tutto e tutti, questo video gioca con l'infinita categoria di video di reazione e recensione su YouTube. Inizia con una semplice ricetta per un toast al formaggio e si trasforma in un vortice di video che si allontanano sempre più dalla ricetta per addentrarsi in una discussione su cosa sia un algoritmo e su come possa essere utilizzato.""</div>
+  <div class="box"><h3>3 - CCC Zine <br> <em>Michelle Tylicki</em><br> Anno 2025 <br>Opera originale</h3>In questo colorato atto di resistenza, useremo forme audaci e motivi caotici per mandare in tilt la tecnologia di riconoscimento facciale. Ispirato al camuffamento "dazzle" della Prima Guerra Mondiale, questo workshop è in parte condivisione di competenze creative e in parte tattica di protesta: trasformeremo il trucco in uno strumento per interferire con la visione artificiale. Il workshop sarà condotto da Michelle Tylicki @shelkadelic</div>
+
+</div>
+<div class="grid-flex">
+    <div class="box"><h3>4 - Collezione “Algoritmi quotidiani” <br> <em>gruppo di ricerca Algocount (Dipartimento di Scienze Sociali e Politiche, Università degli Studi di Milano; Density Design Research Lab, Politecnico di Milano; Museo Nazionale Scienza e Tecnologia Leonardo da Vinci, Milano)</em> <br> Anno 2021/2022 <br> PROVENIENZA: Museo Nazionale Scienza e Tecnologia Leonardo da Vinci</h3>"Quando l’algoritmo di una piattaforma dà un suggerimento, la logica della raccomandazione non è mai nota. Il progetto di ricerca Algocount (Università degli Studi di Milano e Politecnico di Milano, 2020-22) ha indagato la percezione del ruolo di questi algoritmi nella formazione dell’opinione pubblica in Italia. Le opere qui esposte restituiscono alcuni risultati di esperimenti effettuati."</div>
+    <div class="box"><h3>5 - SYNC<sup>*</sup> Learning to coexist <br> <em>Simona Invitti</em> <br> Anno 2026<br>PROVENIENZA: opera realizzata all’interno del corso Final Design Studio Sez.2 - Digital and Interaction Design - Politecnico di Milano </h3>"SYNC riflette sul lento collasso di Città del Messico, dovuto al sovrasfruttamento della falda acquifera sottostante. L’installazione estende questa condizione in un futuro speculativo in cui un’IA, media e ridefinisce le relazioni tra umano e non umano. I partecipanti assumono il ruolo di questa IA, interagendo con le entità del sistema per negoziare un equilibrio tra estrazione e rigenerazione."</div>  
+    <div class="box"><h3>6 - SEED<sup>*</sup> <br> <em>Lorenzo Forges Davanzati, Pier Carlo Adani, Federico Cavalli, Luca Rigat</em> <br> Anno 2026<br>PROVENIENZA: opera originale</h3>SEED è un’installazione audiovisiva che esplora la tensione tra organico e urbano. Due superfici inclinate ospitano immagini e suoni che si sovrappongono e si trasformano. Le immagini, generate con AI e rielaborate, evocano processi vitali che eccedono il calcolo. L’opera costruisce un equilibrio instabile, attivando l’incomputabile come relazione tra sistemi in continuo cambiamento.</div>
+</div> 
+<div class="grid-flex">
+  <div class="box"><h3>7 - AIXD <br> <em>AIXDesign</em> <br> Anno 2025<br>PROVENIENZA: AiXDesign resources</h3>"Questa raccolta di zine ripensa l’AI oltre scala e profitto. Esoteric AI intreccia magia e tecnologia; Ancestral AI recupera saperi e temporalità non occidentali; Small AI propone modelli sostenibili e comunitari. Insieme aprono visioni plurali, situate e più giuste dell’intelligenza artificiale."</div>
+  <div class="box"><h3>8 - ADAM<sup>*</sup> <br> <em>Mirco Orlandi</em> <br> Anno 2026<br>PROVENIENZA: opera originale</h3>"Un video si accende: una voce indefinita lancia un appello, cercando un essere umano. Le macchine, ormai uniche abitanti della Terra, hanno scoperto di non essere perfette senza qualcuno che le giudichi. Tentano di ricreare l’imperfezione umana, ma falliscono. Resta solo un messaggio: trovare almeno un uomo, perché il mondo possa rinascere."</div>
+  <div class="box"><h3>9 - Miscellanea I<sup>*</sup> <br> <em>Nicholas Mazzilli</em> <br> Anno 2026 <br>PROVENIENZA: opera originale</h3>"Una raccolta di messaggi salvati dall’oblio e dal giudizio delle macchine. Il volume raccoglie formule, codici e scritture impiegate per riti e maledizioni digitali, accompagnate da illustrazioni provenienti da un’Antica Persia parallela."</div>
+</div>
+<div class="grid-flex">
+  <div class="box"><h3>10 - Φ<sup>*</sup> <br> <em>Semijiang Semet</em> <br> Anno 2025<br>PROVENIENZA: opera originale</h3>"Il simbolo matematico Φ, un cerchio attraversato da una linea verticale, richiama idee di circolazione e ripetizione, ricordando anche la lettera Q. Nel progetto, il Q-Learning è l’algoritmo principale, usato per influenzare i comportamenti sui social media. Nel mondo virtuale dell’opera, un verme segue la luce di un cubo per paura del buio. Il cubo apprende continuamente tramite un algoritmo e modifica l’immagine che produce. L’insetto, metà bambino e metà invertebrato, rappresenta una vita fragile. Nei social media, ridurre le persone a segnali trattabili crea le condizioni ideali per il controllo del comportamento."</div>
+  <div class="box"><h3>11 - Te Wai Ora<sup>*</sup> <br> <em>Alice Conti, Laura Crepaldi, Özlem Güney, Fengrong Luo, Jiyai Tang, Rachele Tarateo</em> <br> Anno 2025<br>PROVENIENZA: opera originale</h3>"Te Wai Ora è un'installazione interattiva che immagina un'intelligenza artificiale basata su principi indigeni come custode dei sistemi idrici naturali. Ispirandosi alle popolazioni dei Māori, traduce i loro valori e pratiche ecologiche in interazioni concrete, incoraggiando i partecipanti a sperimentare la responsabilità, la moderazione e relazioni rispettose con gli ecosistemi fluviali viventi."</div>
+  <div class="box"><h3>12 - Undisciplined Seeing<sup>*</sup> <br> <em>Antonella Autuori</em> <br> Anno 2025 - ongoing<br>PROVENIENZA: opera originale</h3>"Undisciplined Seeing è un'installazione partecipativa che invita i visitatori a resistere alla logica classificatoria dei sistemi di visione basati sull'intelligenza artificiale. Una raccolta di immagini, tratte da dataset utilizzati per addestrare modelli di apprendimento automatico, viene esposta senza etichette. Ai partecipanti viene chiesto di rietichettarle manualmente, utilizzando le proprie parole, lingue, ricordi o associazioni. Le etichette accumulate diventano una tassonomia collettiva e situata: contraddittoria, poetica, incarnata e irriducibile a un'unica verità assoluta. L'installazione non considera la classificazione come un atto tecnico neutro, bensì come un atto di potere, che appiattisce il contestuale, l'ambiguo e il relazionale in categorie computabili. L'indisciplina collettiva svela questo atto, rendendo visibile che il modo in cui vediamo insieme non è mai definito, mai generalizzabile, mai del tutto catturabile."</div>
+
+</div>
+<div class="grid-flex">
+  <div class="box"><h3>13 - Variabile Computazionale<sup>*</sup> <br> <em>Martina Marchio</em> <br> Anno 2026<br>PROVENIENZA: opera originale</h3>"L'opera è un'installazione audio-reattiva sviluppata in real-time engine (Unreal) che esplora il cortocircuito tra la logica della macchina e il Default Mode Network (DMN) del cervello umano. Visivamente, l'ambiente è dominato da shader basati su funzioni matematiche e frattali perfetti (Mandelbrot, Fibonacci), la quintessenza del "computabile". L'elemento "incomputabile" - l'imperfezione, il senso dell'Io, il trauma - introdotto attraverso un brano musicale originale inedito. La voce umana e l'emozione della traccia agiscono come un'anomalia: i dati audio forzano il rigido codice Assembly e le geometrie procedurali a piegarsi, de-laminarsi e reagire organicamente alla musica. È la rappresentazione visiva di un algoritmo che cerca, fallendo, di calcolare e contenere la vulnerabilità umana, trasformando l'errore di calcolo in espressione artistica."</div>
+  <div class="box"><h3>14 - Watering the somatic oasis <br> <em>Hiba Ali</em> <br> Anno 2022/2023</h3>"Watering the Somatic Oasis è un'installazione di realtà virtuale esposta a livello internazionale che esplora la temporalità, l'incarnazione e l'accelerazione tecnologica attraverso pratiche immersive e somatiche. L'opera invita i partecipanti a entrare in un'esperienza VR guidata in cui acqua digitale, ritmo e tecniche di movimento bilaterale funzionano come meccanismi di regolazione per il sistema nervoso. Sullo sfondo dell'accelerazione guidata dall'intelligenza artificiale, della temporalità della piattaforma e dell'ottimizzazione continua, l'installazione propone la lentezza sia come metodologia incarnata che come posizione critica, mettendo in primo piano la durata, la presenza attentiva e la ricalibrazione corporea."</div>
+ </div>
+
+  
+
+  
+
+  <!-- FOOTER -->
+  <footer>
+    <p>N.I.N.A APS<br>C.F. 98021140151<br>Via Belgirate, 15 Milano<br>Copyright 2026</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+document.querySelector(".hamburger").addEventListener("click", () => {
+  document.querySelector(".nav-links").classList.toggle("open");
+});
+
+// Apri i dropdown su mobile con il tocco
+document.querySelectorAll(".dropdown > a").forEach(link => {
+  link.addEventListener("click", (e) => {
+    if (window.innerWidth <= 1024) {
+      e.preventDefault();
+      link.parentElement.classList.toggle("open");
+    }
+  });
+});
+</script>
+</body>
+</html>
